@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import {Physical} from "../physical/physical";
+import {Support} from "../support/support";
 
 @Component({
   selector: 'page-home',
@@ -8,6 +9,7 @@ import {Physical} from "../physical/physical";
 })
 export class HomePage {
   physicalPage=Physical;
+  supportPage=Support;
 
   constructor(public navCtrl: NavController) {
 

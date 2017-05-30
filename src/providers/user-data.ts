@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Http } from '@angular/http';
 import 'rxjs/add/operator/map';
+import {Observable} from "rxjs";
 
 /*
   Generated class for the UserData provider.
@@ -10,6 +11,7 @@ import 'rxjs/add/operator/map';
 */
 @Injectable()
 export class UserData {
+  data: any;
   _favorites: string[] = [];
   http: Http;
   apiUrl = 'http://myonlai.com:8080/cssp/dimContent?dimName=Physical';
@@ -17,15 +19,16 @@ export class UserData {
   constructor(public httpService: Http,) {
     console.log('Hello UserData Provider');
 
-   this.load();
+    this.load();
 
   }
 
 
-  load(){
+  load() {
     this.http = this.httpService;
 
-    var response=this.http.get(this.apiUrl).map(res => res.json());
+
+    var response = this.http.get(this.apiUrl).map(res => res.json());
     return response;
   }
 
@@ -35,7 +38,23 @@ export class UserData {
   };
 
   addFavorite(sessionName: string): void {
-    this._favorites.push(sessionName);
+    this._favorites.unshift(sessionName);
+    console.log(this._favorites)
   };
 
+  removeFavorite(sessionName: string): void {
+    let index = this._favorites.indexOf(sessionName);
+    if (index > -1) {
+      this._favorites.splice(index, 1);
+      console.log(this._favorites)
+    }
+  };
+
+
+
 }
+
+
+
+
+

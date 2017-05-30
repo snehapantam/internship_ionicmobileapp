@@ -1,7 +1,9 @@
 import { Component } from '@angular/core';
-import {IonicPage, NavController, NavParams} from 'ionic-angular';
+import {IonicPage, NavController, NavParams, Slides} from 'ionic-angular';
 import {Profile} from "../profile/profile";
 import { ModalController } from 'ionic-angular';
+import {TabsPage} from "../tabs/tabs";
+import {AdminPage} from "../admin-page/admin-page";
 
 
 
@@ -18,14 +20,20 @@ import { ModalController } from 'ionic-angular';
 })
 export class First {
 
+  adminpage=AdminPage;
 
+  showSkip = true;
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public modalCtrl:ModalController) {
 
 
   }
 
+ tabspage=TabsPage;
 
+  onSlideChangeStart(slider: Slides) {
+    this.showSkip = !slider.isEnd();
+  }
 
 
   ionViewDidLoad() {

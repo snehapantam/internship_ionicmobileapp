@@ -1,0 +1,54 @@
+<!--
+  Generated template for the AddResource page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>addResource</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <ion-list>
+
+    <ion-item>
+      <ion-label floating> Resource Name</ion-label>
+      <ion-input type="text"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label floating> Resource Location</ion-label>
+      <ion-input type="text"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label floating>Component</ion-label>
+      <ion-select [(ngModel)]="component">
+        <ion-option value="physical" selected="true">Physical</ion-option>
+        <ion-option value="emotional" selected="true">Emotional</ion-option>
+        <ion-option value="occupational" selected="true">Occupational</ion-option>
+        <ion-option value="spiritual" selected="true">Spiritual</ion-option>
+        <ion-option value="intellectual" selected="true">Intellectual</ion-option>
+        <ion-option value="assessment" selected="true">Assessment</ion-option>
+        <ion-option value="social" selected="true">Social</ion-option>
+        <ion-option value="environmental" selected="true">Environmental</ion-option>
+
+      </ion-select>
+    </ion-item>
+
+<ion-item>
+    <ion-label floating>Goal</ion-label>
+    <ion-select [(ngModel)]="goal">
+      <ion-option value="csusb" selected="true">Teacher</ion-option>
+      <ion-option value="csulb">Doctor</ion-option>
+
+    </ion-select>
+  </ion-item>
+
+  </ion-list>
+</ion-content>

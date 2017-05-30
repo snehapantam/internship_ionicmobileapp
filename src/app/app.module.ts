@@ -25,6 +25,11 @@ import {HttpModule} from "@angular/http";
 import {DetailPage} from "../pages/detail-page/detail-page";
 import {UserData} from "../providers/user-data";
 import {IonicStorageModule} from "@ionic/storage";
+import {Filter} from "../pages/filter/filter";
+import {Support} from "../pages/support/support";
+import {CallNumber} from "@ionic-native/call-number";
+import {AdminPage} from "../pages/admin-page/admin-page";
+import {AddResource} from "../pages/add-resource/add-resource";
 
 @NgModule({
   declarations: [
@@ -35,7 +40,7 @@ import {IonicStorageModule} from "@ionic/storage";
     TabsPage,
     First,
     Profile,
-    Intro,Physical,Emotional,Physicalresources,Map,DetailPage
+    Intro,Physical,Emotional,Physicalresources,Map,DetailPage,Filter,Support,AdminPage,AddResource
   ],
   imports: [
     BrowserModule,
@@ -52,14 +57,15 @@ import {IonicStorageModule} from "@ionic/storage";
     TabsPage,
     First,
     Profile,
-    Intro,Physical,Emotional,Physicalresources,Map,DetailPage
+    Intro,Physical,Emotional,Physicalresources,Map,DetailPage,Filter,Support,AdminPage,AddResource
   ],
   providers: [
     StatusBar,
     SplashScreen,
     Geolocation,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
-    UserData
+    UserData,
+    CallNumber
   ]
 })
 export class AppModule {}

@@ -13,7 +13,7 @@
 
 
 
-      <button ion-button icon-only> <ion-icon name="settings" ></ion-icon></button>
+      <button ion-button [navPush]="supportPage">Help</button>
 
     </ion-buttons>
 
@@ -29,33 +29,33 @@
 
 <ion-footer>
 
-  <ion-grid class="button-group">
-    <ion-row>
-      <ion-col style="width: 25%">
-        <button ion-button block color="dark" style="font-size:10px;" [navPush]="physicalPage" >Physical</button>
+  <ion-grid class="button-group"  >
+    <ion-row style="background-color:black; height:50px">
+      <ion-col style="width: 25%; text-decoration-color: white  ">
+        <button ion-button block  color="light" style="font-size:10px; " [navPush]="physicalPage" ><b>Physical</b> </button>
       </ion-col >
-      <ion-col style="width: 25%">
-        <button ion-button block color="dark" style="font-size:10px;">Emotional</button>
+      <ion-col style="width: 25%;">
+        <button ion-button block color="light" style="font-size:10px;"><b>Emotional</b></button>
       </ion-col>
       <ion-col style="width: 25%">
-        <button ion-button block color="dark" style="font-size:10px;">Occupational</button>
+        <button ion-button block color="light" style="font-size:10px;"><b>Occupational</b></button>
       </ion-col>
       <ion-col style="width: 25%">
-        <button ion-button block color="dark" style="font-size:10px;">Spiritual</button>
+        <button ion-button block color="light" style="font-size:10px; "><b>Spiritual</b></button>
       </ion-col>
     </ion-row>
-    <ion-row>
+    <ion-row style="background-color:black;height:50px">
       <ion-col style="width: 25%">
-        <button ion-button block color="dark" style="font-size:10px; ">Intellectual</button>
+        <button ion-button block color="light" style="font-size:10px;" ><b>Intellectual</b></button>
       </ion-col>
       <ion-col style="width: 25%">
-        <button ion-button block color="dark" style="font-size:10px;">Assessment</button>
+        <button ion-button block color="light" style="font-size:10px;"><b>Assessment</b></button>
       </ion-col>
       <ion-col style="width: 25%">
-        <button ion-button block color="dark" style="font-size:10px;">Social</button>
+        <button ion-button block color="light" style="font-size:10px;"><b>Social</b></button>
       </ion-col>
       <ion-col style="width: 25%">
-        <button ion-button block color="dark" style="font-size:10px;">Environmental</button>
+        <button ion-button block color="light" style="font-size:10px;"><b>Environmental</b></button>
       </ion-col>
     </ion-row>
   </ion-grid>

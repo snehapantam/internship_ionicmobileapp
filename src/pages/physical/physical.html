@@ -12,7 +12,6 @@
     <ion-buttons end>
 
 
-      <button ion-button icon-only> <ion-icon name="refresh" ></ion-icon></button>
 
       <button ion-button icon-only> <ion-icon name="settings" ></ion-icon></button>
 
@@ -21,35 +20,32 @@
 </ion-header>
 <ion-content class="card-background-page">
 
-  <ion-card >
+  <ion-card (click)="navigate('resources')" >
 
 
-    <div class="card-title" (click)="navigate('resources')" >Resources</div>
+    <div class="card-title"  >Resources</div>
     <div class="card-subtitle">41 Listings</div>
 
   </ion-card>
 
 
-  <ion-card>
+  <ion-card (click)="navigate('workshops')">
 
-    <div class="card-title" (click)="navigate('workshops')">Workshops</div>
+    <div class="card-title" >Workshops</div>
     <div class="card-subtitle">64 Listings</div>
   </ion-card>
 
-  <ion-card>
+  <ion-card (click)="navigate('tutorials')">
 
-    <div class="card-title" (click)="navigate('tutorials')">Tutorials</div>
+    <div class="card-title" >Tutorials</div>
     <div class="card-subtitle">72 Listings</div>
   </ion-card>
 
-  <ion-card>
-    <div class="card-title" (click)="navigate('clubs')">Student Clubs</div>
+  <ion-card (click)="navigate('clubs')">
+    <div class="card-title" >Student Clubs</div>
     <div class="card-subtitle">28 Listings</div>
   </ion-card>
 
-  <ion-card>
-    <div class="card-title" (click)="navigate('studentgoals')">Goals</div>
-    <div class="card-subtitle">28 Listings</div>
-  </ion-card>
+ \
 
 </ion-content>
