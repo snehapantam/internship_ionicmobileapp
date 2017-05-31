@@ -35,6 +35,14 @@ import {Occupational} from "../pages/occupational/occupational";
 import {Occupationalresources} from "../pages/occupationalresources/occupationalresources";
 import {Spiritual} from "../pages/spiritual/spiritual";
 import {Spiritualresources} from "../pages/spiritualresources/spiritualresources";
+import {Intellectual} from "../pages/intellectual/intellectual";
+import {Intellectualresources} from "../pages/intellectualresources/intellectualresources";
+import {Assessment} from "../pages/assessment/assessment";
+import {Assessmentresources} from "../pages/assessmentresources/assessmentresources";
+import {Social} from "../pages/social/social";
+import {Socialresources} from "../pages/socialresources/socialresources";
+import {Environmental} from "../pages/environmental/environmental";
+import {Environmentalresources} from "../pages/environmentalresources/environmentalresources";
 
 @NgModule({
   declarations: [
@@ -55,7 +63,11 @@ import {Spiritualresources} from "../pages/spiritualresources/spiritualresources
     Physical, Physicalresources,
     Emotional, Emotionalresources,
     Occupational, Occupationalresources,
-    Spiritual, Spiritualresources
+    Spiritual, Spiritualresources,
+    Intellectual,Intellectualresources,
+    Assessment,Assessmentresources,
+    Social,Socialresources,
+    Environmental,Environmentalresources
   ],
   imports: [
     BrowserModule,
@@ -76,7 +88,12 @@ import {Spiritualresources} from "../pages/spiritualresources/spiritualresources
     Occupational,
     Occupationalresources,
     Spiritual,
-    Spiritualresources
+    Spiritualresources,
+    Intellectual,
+    Intellectualresources,
+    Assessment,Assessmentresources,
+    Social,Socialresources,
+    Environmental,Environmentalresources
   ],
   providers: [
     StatusBar,

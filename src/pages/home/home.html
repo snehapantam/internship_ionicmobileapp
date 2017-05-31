@@ -46,16 +46,16 @@
     </ion-row>
     <ion-row style="background-color: rgba(0,0,0,0.5);height:50px">
       <ion-col style="width: 25%">
-        <button ion-button block color="light" style="font-size:10px;" ><b>Intellectual</b></button>
+        <button ion-button block color="light" style="font-size:10px;" [navPush]="intellectualPage" ><b>Intellectual</b></button>
       </ion-col>
       <ion-col style="width: 25%">
-        <button ion-button block color="light" style="font-size:10px;"><b>Assessment</b></button>
+        <button ion-button block color="light" style="font-size:10px;" [navPush]="assessmentPage"><b>Assessment</b></button>
       </ion-col>
       <ion-col style="width: 25%">
-        <button ion-button block color="light" style="font-size:10px;"><b>Social</b></button>
+        <button ion-button block color="light" style="font-size:10px;" [navPush]="socialPage"><b>Social</b></button>
       </ion-col>
       <ion-col style="width: 25%">
-        <button ion-button block color="light" style="font-size:10px;"><b>Environmental</b></button>
+        <button ion-button block color="light" style="font-size:10px;" [navPush]="environmentalPage"><b>Environmental</b></button>
       </ion-col>
     </ion-row>
   </ion-grid>

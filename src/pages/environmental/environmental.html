@@ -1,0 +1,91 @@
+<!--
+  Generated template for the Environmental page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<!--
+  Generated template for the Physical page.
+
+  See http://ionicframework.com/docs/v2/components/#navigation for more info on
+  Ionic pages and navigation.
+--><ion-header>
+  <ion-navbar class="opaque">
+
+
+    <ion-title>environmental</ion-title>
+
+    <ion-buttons end>
+
+
+
+      <button ion-button icon-only> <ion-icon name="settings" ></ion-icon></button>
+
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+<ion-content class="card-background-page">
+
+  <ion-card (click)="navigate('resources')" >
+
+
+    <div class="card-title"  >Resources</div>
+    <div class="card-subtitle">41 Listings</div>
+
+  </ion-card>
+
+
+  <ion-card (click)="navigate('workshops')">
+
+    <div class="card-title" >Workshops</div>
+    <div class="card-subtitle">64 Listings</div>
+  </ion-card>
+
+  <ion-card (click)="navigate('tutorials')">
+
+    <div class="card-title" >Tutorials</div>
+    <div class="card-subtitle">72 Listings</div>
+  </ion-card>
+
+  <ion-card (click)="navigate('clubs')">
+    <div class="card-title" >Student Clubs</div>
+    <div class="card-subtitle">28 Listings</div>
+  </ion-card>
+
+
+
+</ion-content>
+<style>
+
+  ion-content{
+    background: image("../../assets/img/physicalimage.jpg");
+  }
+
+  ion-card {
+    position: relative;
+    text-align: center;
+    height: 35%;
+    background: rgba(0, 0, 0, 0.75);
+
+  }
+
+  .card-title {
+    position: absolute;
+    top: 36%;
+    font-size: 2.0em;
+    width: 100%;
+    font-weight: bold;
+    color: #fff;
+  }
+
+  .card-subtitle {
+    font-size: 1.0em;
+    position: absolute;
+    top: 52%;
+    width: 100%;
+    color: #fff;
+  }
+
+
+
+</style>
