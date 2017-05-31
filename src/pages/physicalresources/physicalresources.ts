@@ -1,8 +1,5 @@
 import {Component, ViewChild} from '@angular/core';
-import {
-  ActionSheetController, AlertController, IonicPage, NavController, NavParams, Slides,
-  ToastController,
-} from 'ionic-angular';
+import { AlertController, IonicPage, NavController, NavParams, Slides, ToastController,} from 'ionic-angular';
 import {Map} from "../map/map";
 import {Http} from "@angular/http";
 import 'rxjs/add/operator/map';
@@ -27,7 +24,7 @@ import {CallNumber} from "@ionic-native/call-number";
 })
 export class Physicalresources {
   [name: string]: any;
-  http: Http;
+  clubs: any;
   phoneNumber:number;
 
   mapPage = Map;
@@ -39,17 +36,27 @@ export class Physicalresources {
   slides: any;
 
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, httpService: Http,
+  constructor(public navCtrl: NavController, public navParams: NavParams, private httpService: Http,
               public alertCtrl: AlertController,
               public service: UserData,
   public callNumber:CallNumber, public toastCtrl:ToastController) {
 
-this.segment= this.navParams.get('name');
+    this.httpService.get('/getPhysicalClubs')
+      .map(res => res.json())
+      .subscribe(data => {
+        this.clubs = data;
+        console.log("data" , data);
+      });
 
-this.physical=this.segment;
+    this.segment= this.navParams.get('name');
+    this.physical=this.segment;
+    this.segment = this.navParams.get('name');
+
+    this.physical = this.segment;
 
 
-    this.phoneNumber=9094874493; /**put the phone number here.*/
+    this.phoneNumber = 9094874493;
+    /**put the phone number here.*/
 
 
 

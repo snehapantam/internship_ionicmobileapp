@@ -150,40 +150,50 @@ Resources
 
   </div>
 
-  <div [ngSwitch]="physical">
+  <div [ngSwitch]="physical"  >
 
-    <ion-card *ngSwitchCase="'clubs'">
+    <div *ngSwitchCase="'clubs'">
 
-      <ion-item>
+      <div *ngFor = "let club of clubs">
+        <ion-card>
+          <ion-card-content>
+            <ion-card-title>
+              {{club.name}}
+            </ion-card-title>
+            <p>
+              Contact: {{club.contact_name}}
+            </p>
+          </ion-card-content>
+          <ion-row>
+            <ion-col>
+              <button ion-button icon-left clear small (click)="call(club.phone)">
+                <ion-icon name="thumbs-up"></ion-icon>
+                <div>Call</div>
+              </button>
+            </ion-col>
+            <ion-col>
+              <button ion-button icon-left clear small>
+                <ion-icon name="text"></ion-icon>
+                <div>Email</div>
+              </button>
+            </ion-col>
+            <ion-col center text-center>
 
-        <h2>Resource1</h2>
-        <p>11 N. Way St, Madison, WI 53703</p>
-      </ion-item>
-      <ion-row>
-        <ion-col>
-          <button ion-button icon-left clear small>
-            <ion-icon name="thumbs-up"></ion-icon>
-            <div>Call</div>
-          </button>
-        </ion-col>
-        <ion-col>
-          <button ion-button icon-left clear small>
-            <ion-icon name="text"></ion-icon>
-            <div>Email</div>
-          </button>
-        </ion-col>
-        <ion-col center text-center>
+              <button ion-button icon-left clear small (click)="presentToast()">
+                <ion-icon name="clock"></ion-icon>
+                <div>To do</div>
+              </button>
 
-          <button ion-button icon-left clear small (click)="presentToast()">
-            <ion-icon name="clock"></ion-icon>
-            <div>To do</div>
-          </button>
+            </ion-col>
+          </ion-row>
+        </ion-card>
+      </div>
 
-        </ion-col>
-      </ion-row>
-    </ion-card>
+    </div>
 
   </div>
+
+
 </ion-content>
 <style>
   ion-scroll{

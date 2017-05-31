@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import {Physicalresources} from "../physicalresources/physicalresources";
+import { Http} from '@angular/http';
+import 'rxjs/add/operator/map';
 
 /**
  * Generated class for the Physical page.
@@ -15,10 +17,11 @@ import {Physicalresources} from "../physicalresources/physicalresources";
 })
 export class Physical {
   segment: any;
+  data: any;
 
-physicalresources=Physicalresources;
+  physicalresources=Physicalresources;
+  constructor(public navCtrl: NavController, public navParams: NavParams,public http: Http) {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
 
     }
 
