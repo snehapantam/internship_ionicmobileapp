@@ -13,7 +13,7 @@
 
 
 
-      <button ion-button [navPush]="supportPage">Help</button>
+      <button ion-button [navPush]="supportPage" color="dark">Help</button>
 
     </ion-buttons>
 
@@ -30,12 +30,12 @@
 <ion-footer>
 
   <ion-grid class="button-group"  >
-    <ion-row style="background-color:black; height:50px">
+    <ion-row style="background-color:rgba(0,0,0,0.5); height:50px">
       <ion-col style="width: 25%; text-decoration-color: white  ">
         <button ion-button block  color="light" style="font-size:10px; " [navPush]="physicalPage" ><b>Physical</b> </button>
       </ion-col >
       <ion-col style="width: 25%;">
-        <button ion-button block color="light" style="font-size:10px;"><b>Emotional</b></button>
+        <button ion-button block color="light" style="font-size:10px;" [navPush]="emotionalPage"><b>Emotional</b></button>
       </ion-col>
       <ion-col style="width: 25%">
         <button ion-button block color="light" style="font-size:10px;"><b>Occupational</b></button>
@@ -44,7 +44,7 @@
         <button ion-button block color="light" style="font-size:10px; "><b>Spiritual</b></button>
       </ion-col>
     </ion-row>
-    <ion-row style="background-color:black;height:50px">
+    <ion-row style="background-color: rgba(0,0,0,0.5);height:50px">
       <ion-col style="width: 25%">
         <button ion-button block color="light" style="font-size:10px;" ><b>Intellectual</b></button>
       </ion-col>
@@ -65,3 +65,10 @@
 
 
 </ion-footer>
+<style>
+  ion-content{
+    background:url("http://csusb.zenfolio.com/img/s/v-3/p542124547-3.jpg");
+    background-repeat: no-repeat;
+    background-size:cover;
+  }
+</style>

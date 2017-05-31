@@ -30,6 +30,7 @@ import {Support} from "../pages/support/support";
 import {CallNumber} from "@ionic-native/call-number";
 import {AdminPage} from "../pages/admin-page/admin-page";
 import {AddResource} from "../pages/add-resource/add-resource";
+import {Emotionalresources} from "../pages/emotionalresources/emotionalresources";
 
 @NgModule({
   declarations: [
@@ -40,7 +41,16 @@ import {AddResource} from "../pages/add-resource/add-resource";
     TabsPage,
     First,
     Profile,
-    Intro,Physical,Emotional,Physicalresources,Map,DetailPage,Filter,Support,AdminPage,AddResource
+    Intro,Physical,Emotional,
+    Physicalresources,
+    Map,
+    DetailPage,
+    Filter,
+    Support,
+    AdminPage,
+    AddResource,
+    Emotional,
+    Emotionalresources
   ],
   imports: [
     BrowserModule,
@@ -57,7 +67,7 @@ import {AddResource} from "../pages/add-resource/add-resource";
     TabsPage,
     First,
     Profile,
-    Intro,Physical,Emotional,Physicalresources,Map,DetailPage,Filter,Support,AdminPage,AddResource
+    Intro,Physical,Emotional,Physicalresources,Map,DetailPage,Filter,Support,AdminPage,AddResource,Emotional,Emotionalresources
   ],
   providers: [
     StatusBar,

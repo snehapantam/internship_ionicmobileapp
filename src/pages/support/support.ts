@@ -19,14 +19,14 @@ export class Support {
 
   submitted: boolean = false;
   supportMessage: string;
-  phoneNumber:number;
+
 
 
 
   constructor(public navCtrl: NavController, public navParams: NavParams,public toastCtrl: ToastController,
               public alertCtrl: AlertController,
    private callNumber: CallNumber) {
-   this.phoneNumber=9094874493;
+
   }
 
   submit(form: NgForm) {
@@ -44,15 +44,7 @@ export class Support {
     }
   }
 
-call() {
-  this.callNumber.callNumber(String(this.phoneNumber), true)
-    .then(() => console.log('Launched dialer!'))
-    .catch(() => console.log('Error launching dialer'));
-}
 
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad Support');
-  }
 
 
   ionViewCanLeave(): boolean | Promise<boolean> {

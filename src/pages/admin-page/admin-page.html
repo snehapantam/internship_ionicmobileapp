@@ -13,16 +13,65 @@
 </ion-header>
 
 
-<ion-content padding>
-  <button ion-button color="dark" block [navPush]="addresourcepage">Add Resources</button>
-  <button ion-button color="dark" block>Add Workshops</button>
-  <button ion-button color="dark" block>Add Tutorials</button>
-  <button ion-button color="dark" block>Add Clubs</button>
-  <button ion-button color="dark" block>Add Events</button>
+<ion-content padding class="card-background-page">
+  <ion-card [navPush]="addresourcepage" >
 
 
+    <div class="card-title"  > Add Resources</div>
 
 
+  </ion-card>
+  <ion-card [navPush]="addresourcepage" >
+
+
+    <div class="card-title"  > Add Workshops</div>
+
+
+  </ion-card>
+  <ion-card [navPush]="addresourcepage" >
+
+
+    <div class="card-title"  > Add Tutorials</div>
+
+
+  </ion-card>
+  <ion-card [navPush]="addresourcepage" >
+
+
+    <div class="card-title"  > Add Clubs</div>
+
+
+  </ion-card>
+  <ion-card [navPush]="addresourcepage" >
+
+
+    <div class="card-title"  > Add Events</div>
+
+
+  </ion-card>
 
 
 </ion-content>
+<style>
+
+  ion-content{
+    background: url("http://www.iesportsnews.com/wp-content/uploads/2015/12/12313720_1647269695528112_3919921228608555724_n.jpg");
+    background-repeat:no-repeat;
+  }
+
+  ion-card {
+    position: relative;
+    text-align: center;
+    height: 15%;
+    background: rgba(0,0,0, 0.75);
+  }
+  .card-title {
+    position: absolute;
+    top: 36%;
+    font-size: 2.0em;
+    width: 100%;
+    font-weight: bold;
+    color: #fff;
+  }
+
+</style>
