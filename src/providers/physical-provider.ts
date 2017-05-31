@@ -3,17 +3,24 @@ import { Http } from '@angular/http';
 import 'rxjs/add/operator/map';
 
 @Injectable()
-export class PhysicaService {
+export class PhysicalService {
+  httpService: any;
   data: any;
-  _favorites: string[] = [];
+  http:Http;
 
-  constructor(private http: Http) {}
-
-  getClubs(){
-    return this.http.get('/getCampusResource')
-      .subscribe(data => {
-        console.log(data)
-      });
+  constructor(public httpservice: Http) {
+    this.getClubs();
   }
 
-}
+  getClubs(){
+
+    this.http = this.httpService;
+
+
+    var response = this.http.get('/getPhysicalClubs')
+      .map(res => res.json());
+    return response;
+      }
+  }
+
+

@@ -62,7 +62,7 @@
         </ion-col>
         <ion-col center text-center>
 
-          <button ion-button icon-left clear small style="color: white">
+          <button ion-button icon-left clear small style="color: white" (click)="presentToast()">
             <ion-icon name="clock"></ion-icon>
             <div>To do</div>
           </button>
@@ -75,115 +75,125 @@
 
 
   <div [ngSwitch]="emotional">
+    <div *ngSwitchCase="'workshops'">
+      <ion-card  >
 
-    <ion-card *ngSwitchCase="'workshops'">
+        <ion-card-content >
+          <ion-card-title>
+            Resource
+          </ion-card-title>
+          <p>
+            Location 1
+          </p>
+        </ion-card-content>
+        <ion-row>
+          <ion-col>
+            <button ion-button icon-left clear small>
+              <ion-icon name="thumbs-up"></ion-icon>
+              <div>Call</div>
+            </button>
+          </ion-col>
+          <ion-col>
+            <button ion-button icon-left clear small>
+              <ion-icon name="text"></ion-icon>
+              <div>Email</div>
+            </button>
+          </ion-col>
+          <ion-col center text-center>
 
-      <ion-card-content>
-        <ion-card-title>
-          Resource 1
-        </ion-card-title>
-        <p>
-          Location 1
-        </p>
-      </ion-card-content>
-      <ion-row>
-        <ion-col>
-          <button ion-button icon-left clear small>
-            <ion-icon name="thumbs-up"></ion-icon>
-            <div>Call</div>
-          </button>
-        </ion-col>
-        <ion-col>
-          <button ion-button icon-left clear small>
-            <ion-icon name="text"></ion-icon>
-            <div>Email</div>
-          </button>
-        </ion-col>
-        <ion-col center text-center>
+            <button ion-button icon-left clear small (click)="presentToast()">
+              <ion-icon name="clock"></ion-icon>
+              <div>To do</div>
+            </button>
 
-          <button ion-button icon-left clear small>
-            <ion-icon name="clock"></ion-icon>
-            <div>To do</div>
-          </button>
+          </ion-col>
+        </ion-row>
+      </ion-card>
 
-        </ion-col>
-      </ion-row>
-    </ion-card>
+    </div>
+
+    <div [ngSwitch]="emotional">
+
+      <ion-card *ngSwitchCase="'tutorials'">
+
+        <ion-card-content>
+          <ion-card-title>
+            Resource 1
+          </ion-card-title>
+          <p>
+            Location 1
+          </p>
+        </ion-card-content>
+        <ion-row>
+          <ion-col>
+            <button ion-button icon-left clear small>
+              <ion-icon name="thumbs-up"></ion-icon>
+              <div>Call</div>
+            </button>
+          </ion-col>
+          <ion-col>
+            <button ion-button icon-left clear small>
+              <ion-icon name="text"></ion-icon>
+              <div>Email</div>
+            </button>
+          </ion-col>
+          <ion-col center text-center>
+
+            <button ion-button icon-left clear small (click)="presentToast()">
+              <ion-icon name="clock"></ion-icon>
+              <div>To do</div>
+            </button>
+
+          </ion-col>
+        </ion-row>
+      </ion-card>
+    </div>
+  </div>
+
+  <div [ngSwitch]="emotional"  >
+
+    <div *ngSwitchCase="'clubs'">
+
+      <div *ngFor = "let club of clubs">
+        <ion-card>
+          <ion-card-content>
+            <ion-card-title>
+              {{club.name}}
+            </ion-card-title>
+            <p>
+              Contact: {{club.contact_name}}
+            </p>
+          </ion-card-content>
+          <ion-row>
+            <ion-col>
+              <button ion-button icon-left clear small (click)="call(club.phone)">
+                <ion-icon name="thumbs-up"></ion-icon>
+                <div>Call</div>
+              </button>
+            </ion-col>
+            <ion-col>
+              <button ion-button icon-left clear small>
+                <ion-icon name="text"></ion-icon>
+                <div>Email</div>
+              </button>
+            </ion-col>
+            <ion-col center text-center>
+
+              <button ion-button icon-left clear small (click)="presentToast()">
+                <ion-icon name="clock"></ion-icon>
+                <div>To do</div>
+              </button>
+
+            </ion-col>
+          </ion-row>
+        </ion-card>
+      </div>
+
+    </div>
 
   </div>
 
-  <div [ngSwitch]="emotional">
 
-    <ion-card *ngSwitchCase="'tutorials'">
-
-      <ion-card-content>
-        <ion-card-title>
-          Resource 1
-        </ion-card-title>
-        <p>
-          Location 1
-        </p>
-      </ion-card-content>
-      <ion-row>
-        <ion-col>
-          <button ion-button icon-left clear small>
-            <ion-icon name="thumbs-up"></ion-icon>
-            <div>Call</div>
-          </button>
-        </ion-col>
-        <ion-col>
-          <button ion-button icon-left clear small>
-            <ion-icon name="text"></ion-icon>
-            <div>Email</div>
-          </button>
-        </ion-col>
-        <ion-col center text-center>
-
-          <button ion-button icon-left clear small>
-            <ion-icon name="clock"></ion-icon>
-            <div>To do</div>
-          </button>
-
-        </ion-col>
-      </ion-row>
-    </ion-card>
-
-  </div>
-
-  <div [ngSwitch]="emotional">
-
-    <ion-card *ngSwitchCase="'clubs'">
-
-      <ion-item>
-
-        <h2>Resource1</h2>
-        <p>11 N. Way St, Madison, WI 53703</p>
-      </ion-item>
-      <ion-row>
-        <ion-col>
-          <button ion-button icon-left clear small>
-            <ion-icon name="thumbs-up"></ion-icon>
-            <div>Call</div>
-          </button>
-        </ion-col>
-        <ion-col>
-          <button ion-button icon-left clear small>
-            <ion-icon name="text"></ion-icon>
-            <div>Email</div>
-          </button>
-        </ion-col>
-        <ion-col center text-center>
-
-          <button ion-button icon-left clear small>
-            <ion-icon name="clock"></ion-icon>
-            <div>To do</div>
-          </button>
-
-        </ion-col>
-      </ion-row>
-    </ion-card>
-
-  </div>
 </ion-content>
 <style>
   ion-scroll{
@@ -191,7 +201,9 @@
     width:100%;
   }
 
+  ion-content{
 
+  }
 
 
 </style>

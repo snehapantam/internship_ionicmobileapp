@@ -31,6 +31,10 @@ import {CallNumber} from "@ionic-native/call-number";
 import {AdminPage} from "../pages/admin-page/admin-page";
 import {AddResource} from "../pages/add-resource/add-resource";
 import {Emotionalresources} from "../pages/emotionalresources/emotionalresources";
+import {Occupational} from "../pages/occupational/occupational";
+import {Occupationalresources} from "../pages/occupationalresources/occupationalresources";
+import {Spiritual} from "../pages/spiritual/spiritual";
+import {Spiritualresources} from "../pages/spiritualresources/spiritualresources";
 
 @NgModule({
   declarations: [
@@ -41,16 +45,17 @@ import {Emotionalresources} from "../pages/emotionalresources/emotionalresources
     TabsPage,
     First,
     Profile,
-    Intro,Physical,Emotional,
-    Physicalresources,
+    Intro,
     Map,
     DetailPage,
     Filter,
     Support,
     AdminPage,
     AddResource,
-    Emotional,
-    Emotionalresources
+    Physical, Physicalresources,
+    Emotional, Emotionalresources,
+    Occupational, Occupationalresources,
+    Spiritual, Spiritualresources
   ],
   imports: [
     BrowserModule,
@@ -67,7 +72,11 @@ import {Emotionalresources} from "../pages/emotionalresources/emotionalresources
     TabsPage,
     First,
     Profile,
-    Intro,Physical,Emotional,Physicalresources,Map,DetailPage,Filter,Support,AdminPage,AddResource,Emotional,Emotionalresources
+    Intro,Physical,Emotional,Physicalresources,Map,DetailPage,Filter,Support,AdminPage,AddResource,Emotional,Emotionalresources,
+    Occupational,
+    Occupationalresources,
+    Spiritual,
+    Spiritualresources
   ],
   providers: [
     StatusBar,
@@ -75,7 +84,8 @@ import {Emotionalresources} from "../pages/emotionalresources/emotionalresources
     Geolocation,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     UserData,
-    CallNumber
+    CallNumber,
+
   ]
 })
 export class AppModule {}

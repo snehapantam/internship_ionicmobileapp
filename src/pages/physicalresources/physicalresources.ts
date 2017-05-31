@@ -3,9 +3,7 @@ import { AlertController, IonicPage, NavController, NavParams, Slides, ToastCont
 import {Map} from "../map/map";
 import {Http} from "@angular/http";
 import 'rxjs/add/operator/map';
-import {AboutPage} from "../about/about";
-import {DetailPage} from "../detail-page/detail-page";
-import {UserData} from "../../providers/user-data"
+
 import {CallNumber} from "@ionic-native/call-number";
 
 
@@ -30,15 +28,11 @@ export class Physicalresources {
   mapPage = Map;
 
 
-  @ViewChild('mySlider')
-  slider: Slides;
-  selectedSegment: string;
-  slides: any;
 
 
   constructor(public navCtrl: NavController, public navParams: NavParams, private httpService: Http,
               public alertCtrl: AlertController,
-              public service: UserData,
+
   public callNumber:CallNumber, public toastCtrl:ToastController) {
 
     this.httpService.get('/getPhysicalClubs')
@@ -62,6 +56,7 @@ export class Physicalresources {
 
 
   }
+
 
 presentToast(){
     let toast=this.toastCtrl.create({

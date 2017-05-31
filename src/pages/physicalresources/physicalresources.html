@@ -75,12 +75,12 @@ Resources
 
 
   <div [ngSwitch]="physical">
+<div *ngSwitchCase="'workshops'">
+    <ion-card  >
 
-    <ion-card *ngSwitchCase="'workshops'">
-
-      <ion-card-content>
+      <ion-card-content >
         <ion-card-title>
-          Resource 1
+         Resource
         </ion-card-title>
         <p>
           Location 1
@@ -147,7 +147,7 @@ Resources
         </ion-col>
       </ion-row>
     </ion-card>
-
+  </div>
   </div>
 
   <div [ngSwitch]="physical"  >
@@ -201,7 +201,9 @@ Resources
     width:100%;
   }
 
+  ion-content{
 
+  }
 
 
 </style>
