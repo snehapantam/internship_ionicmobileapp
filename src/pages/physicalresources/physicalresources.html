@@ -62,7 +62,7 @@ Resources
         </ion-col>
         <ion-col center text-center>
 
-          <button ion-button icon-left clear small style="color: white" (click)="presentToast()">
+          <button ion-button icon-left clear small style="color: white" [navPush]="mapPage">
             <ion-icon name="clock"></ion-icon>
             <div>To do</div>
           </button>
@@ -155,31 +155,31 @@ Resources
     <div *ngSwitchCase="'clubs'">
 
       <div *ngFor = "let club of clubs">
-        <ion-card>
+        <ion-card style="background: rgba(0,0,0,0.75);">
           <ion-card-content>
-            <ion-card-title>
-              {{club.name}}
+            <ion-card-title style="color: white">
+              <b>{{club.name}}</b>
             </ion-card-title>
-            <p>
+            <p style="color: white">
               Contact: {{club.contact_name}}
             </p>
           </ion-card-content>
           <ion-row>
             <ion-col>
-              <button ion-button icon-left clear small (click)="call(club.phone)">
+              <button ion-button icon-left clear small (click)="call(club.phone)" style="color: white">
                 <ion-icon name="thumbs-up"></ion-icon>
                 <div>Call</div>
               </button>
             </ion-col>
             <ion-col>
-              <button ion-button icon-left clear small>
+              <button ion-button icon-left clear small style="color: white">
                 <ion-icon name="text"></ion-icon>
                 <div>Email</div>
               </button>
             </ion-col>
             <ion-col center text-center>
 
-              <button ion-button icon-left clear small (click)="presentToast()">
+              <button ion-button icon-left clear small  style="color: white">
                 <ion-icon name="clock"></ion-icon>
                 <div>To do</div>
               </button>
@@ -201,9 +201,12 @@ Resources
     width:100%;
   }
 
-  ion-content{
+  ion-content {
+
+    background: url('../../assets/img/physicalimage.jpg');
+
+
 
   }
-
 
 </style>

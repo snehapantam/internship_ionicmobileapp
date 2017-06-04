@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import {Environmentalresources} from "../environmentalresources/environmentalresources";
 import {Http} from "@angular/http";
+import {Environmentalgoals} from "../environmentalgoals/environmentalgoals";
 
 /**
  * Generated class for the Environmental page.
@@ -18,6 +19,7 @@ export class Environmental {
 
   segment: any;
   data: any;
+  environmentalgoals=Environmentalgoals
 
 
   constructor(public navCtrl: NavController, public navParams: NavParams,public http: Http) {

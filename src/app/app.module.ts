@@ -43,6 +43,14 @@ import {Social} from "../pages/social/social";
 import {Socialresources} from "../pages/socialresources/socialresources";
 import {Environmental} from "../pages/environmental/environmental";
 import {Environmentalresources} from "../pages/environmentalresources/environmentalresources";
+import {Assessmentgoals} from "../pages/assessmentgoals/assessmentgoals";
+import {Socialgoals} from "../pages/socialgoals/socialgoals";
+import {Intellectualgoals} from "../pages/intellectualgoals/intellectualgoals";
+import {Environmentalgoals} from "../pages/environmentalgoals/environmentalgoals";
+import {Occupationalgoals} from "../pages/occupationalgoals/occupationalgoals";
+import {Spiritualgoals} from "../pages/spiritualgoals/spiritualgoals";
+import {Physicalgoals} from "../pages/physicalgoals/physicalgoals";
+import {Emotionalgoals} from "../pages/emotionalgoals/emotionalgoals";
 
 @NgModule({
   declarations: [
@@ -53,21 +61,15 @@ import {Environmentalresources} from "../pages/environmentalresources/environmen
     TabsPage,
     First,
     Profile,
-    Intro,
-    Map,
-    DetailPage,
-    Filter,
-    Support,
-    AdminPage,
-    AddResource,
-    Physical, Physicalresources,
-    Emotional, Emotionalresources,
-    Occupational, Occupationalresources,
-    Spiritual, Spiritualresources,
-    Intellectual,Intellectualresources,
-    Assessment,Assessmentresources,
-    Social,Socialresources,
-    Environmental,Environmentalresources
+    Intro,Physical,Emotional,Physicalresources,Map,DetailPage,Filter,Support,AdminPage,AddResource,Emotional,Emotionalresources,
+    Occupational,Physicalgoals,
+    Occupationalresources,Occupationalgoals,
+    Spiritual,Emotionalgoals,
+    Spiritualresources,Spiritualgoals,
+    Intellectual, Intellectualresources,Intellectualgoals,
+    Assessment,Assessmentresources,Assessmentgoals,
+    Social,Socialresources,Socialgoals,
+    Environmental,Environmentalresources,Environmentalgoals
   ],
   imports: [
     BrowserModule,
@@ -85,15 +87,14 @@ import {Environmentalresources} from "../pages/environmentalresources/environmen
     First,
     Profile,
     Intro,Physical,Emotional,Physicalresources,Map,DetailPage,Filter,Support,AdminPage,AddResource,Emotional,Emotionalresources,
-    Occupational,
-    Occupationalresources,
-    Spiritual,
-    Spiritualresources,
-    Intellectual,
-    Intellectualresources,
-    Assessment,Assessmentresources,
-    Social,Socialresources,
-    Environmental,Environmentalresources
+    Occupational,Physicalgoals,
+    Occupationalresources,Occupationalgoals,
+    Spiritual,Emotionalgoals,
+    Spiritualresources,Spiritualgoals,
+    Intellectual, Intellectualresources,Intellectualgoals,
+    Assessment,Assessmentresources,Assessmentgoals,
+    Social,Socialresources,Socialgoals,
+    Environmental,Environmentalresources,Environmentalgoals
   ],
   providers: [
     StatusBar,

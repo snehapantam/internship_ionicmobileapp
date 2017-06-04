@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import {Socialresources} from "../socialresources/socialresources";
 import {Http} from "@angular/http";
+import {Socialgoals} from "../socialgoals/socialgoals";
 
 /**
  * Generated class for the Social page.
@@ -18,6 +19,7 @@ export class Social {
 
   segment: any;
   data: any;
+  socialgoals=Socialgoals
 
   constructor(public navCtrl: NavController, public navParams: NavParams,public http: Http) {
 

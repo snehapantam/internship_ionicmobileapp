@@ -43,7 +43,7 @@
 
   <div [ngSwitch]="spiritual" >
 
-    <ion-card *ngSwitchCase="'resources'" style="background: rgba(0,0,0,0.75);">
+    <ion-card *ngSwitchCase="'resources'" >
 
       <ion-card-content  >
         <ion-card-title style="color: white" >
@@ -206,10 +206,13 @@
     height: 100%;
     width:100%;
   }
-
+ion-card
+  {
+    background: rgba(0,0,0,0.75);
+  }
   ion-content{
+    background: url("../../assets/img/Spiritual.jpg");
 
   }
-
 
 </style>

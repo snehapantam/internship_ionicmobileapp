@@ -2,6 +2,7 @@ import {Component, ElementRef, ViewChild} from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import {Geolocation} from '@ionic-native/geolocation';
 
+
 declare var google;
 /**
  * Generated class for the Map page.
@@ -25,27 +26,59 @@ export class Map {
 
   ionViewDidLoad(){
     this.loadMap();
+    this.addMarker();
+
   }
 
   loadMap(){
 
-this.geolocation.getCurrentPosition().then((position) =>{
-  let latLng= new google.maps.LatLng(position.coords.latitude,position.coords.longitude);
+this.geolocation.getCurrentPosition().then((position) => {
+  let latLng = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
 
 
-    let mapOptions = {
-      center: latLng,
-      zoom: 15,
-      mapTypeId: google.maps.MapTypeId.ROADMAP
-    }
+  let mapOptions = {
+    center: latLng,
+    zoom: 15,
+    mapTypeId: google.maps.MapTypeId.ROADMAP
+  };
 
-    this.map = new google.maps.Map(this.mapElement.nativeElement, mapOptions);
 
-  },
-  (err) => {
-    console.log(err);
-  });
+
+
+
+      this.map = new google.maps.Map(this.mapElement.nativeElement, mapOptions);
+
+
+    },
+    (err) => {
+      console.log(err);
+    });
+
+
+
+  }
+
+addMarker(){
+
+  this.geolocation.getCurrentPosition().then((position) => {
+   var latLng = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
+    console.log(("marker function"))
+
+    let marker = new google.maps.Marker({
+
+      position: latLng,
+      animation:google.maps.Animation.DROP,
+      visible:true
+    });
+
+    marker.setMap(this.map);
+
+  })
+
+
   }
 
 
-}
+  }
+
+

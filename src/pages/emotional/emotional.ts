@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import {Emotionalresources} from "../emotionalresources/emotionalresources";
+import {Emotionalgoals} from "../emotionalgoals/emotionalgoals";
 
 /**
  * Generated class for the Emotional page.
@@ -14,6 +15,8 @@ import {Emotionalresources} from "../emotionalresources/emotionalresources";
   templateUrl: 'emotional.html',
 })
 export class Emotional {
+
+  emotionalgoals=Emotionalgoals;
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }

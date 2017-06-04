@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import {Intellectualresources} from "../intellectualresources/intellectualresources";
 import {Http} from "@angular/http";
+import {Intellectualgoals} from "../intellectualgoals/intellectualgoals";
 
 /**
  * Generated class for the Intellectual page.
@@ -17,8 +18,8 @@ import {Http} from "@angular/http";
 export class Intellectual {
   segment: any;
   data: any;
+  intellectualgoals=Intellectualgoals
 
-  intellectualresources=Intellectualresources
   constructor(public navCtrl: NavController, public navParams: NavParams,public http: Http) {
 
 
