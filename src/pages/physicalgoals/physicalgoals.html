@@ -14,7 +14,119 @@
 
 
 <ion-content padding>
+  <ion-card>
+    <ion-card-header>
+
+Resources
+
+    </ion-card-header>
+    <ion-card-content>
+      How many times would you like to visit the Resource centers this quarter?
+
+      <ion-badge item-center color="primary">{{resources}}</ion-badge>
+
+      <ion-item>
+
+
+        <ion-range min="0" max="10" [(ngModel)]="resources" color="primary">
+          <ion-label range-left>0</ion-label>
+          <ion-label range-right>10</ion-label>
+        </ion-range>
+
+      </ion-item>
+
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card>
+    <ion-card-header>
+
+     Tutorials
+
+    </ion-card-header>
+    <ion-card-content>
+      How many Tutorials would you like to attend this quarter?
+
+      <ion-badge item-center color="secondary">{{tutorial}}</ion-badge>
+
+      <ion-item>
+
+
+        <ion-range min="0" max="10" [(ngModel)]="tutorial" color="secondary">
+          <ion-label range-left>0</ion-label>
+          <ion-label range-right>10</ion-label>
+        </ion-range>
+
+      </ion-item>
+
+    </ion-card-content>
+  </ion-card>
+  <ion-card>
+    <ion-card-header>
+
+      Workshops
+
+    </ion-card-header>
+    <ion-card-content>
+      How many Workshops would you like to attend this quarter?
+
+      <ion-badge item-center color="dark">{{workshops}}</ion-badge>
+
+      <ion-item>
+
+
+        <ion-range min="0" max="10" [(ngModel)]="workshops" color="dark">
+          <ion-label range-left>0</ion-label>
+          <ion-label range-right>10</ion-label>
+        </ion-range>
+
+      </ion-item>
+
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card>
+    <ion-card-header>
+
+      Clubs
+
+    </ion-card-header>
+    <ion-card-content>
+      How many Club meetings would you like to attend this quarter?
+
+      <ion-badge item-center color="danger">{{clubs}}</ion-badge>
+<br>
+      <ion-item>
+
+        <ion-range min="0" max="10" [(ngModel)]="clubs" color="danger">
+          <ion-label range-left>0</ion-label>
+          <ion-label range-right>10</ion-label>
+        </ion-range>
+
+      </ion-item>
+
+    </ion-card-content>
+  </ion-card>
+
+
 
 
 
 </ion-content>
+<style>
+  ion-card{
+    background: rgba(0, 0, 0, 0.75);
+    color: white;
+
+
+  }
+
+
+  ion-card-header{
+    color:white;
+  }
+  ion-content{
+    background: url("../../assets/img/physicalimage.jpg");
+
+  }
+</style>
