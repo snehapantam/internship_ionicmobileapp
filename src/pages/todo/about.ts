@@ -42,6 +42,15 @@ result:string[]=[];
 
   }
 
+  taskcompleted(){
+
+
+  }
+
+  deletetodo(){
+    
+  }
+
   ionViewDidLoad() {
     console.log('ionViewDidLoad About');
   }

@@ -3,8 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 import { MyApp } from './app.component';
 
-import { AboutPage } from '../pages/about/about';
-import { ContactPage } from '../pages/contact/contact';
+
 import { HomePage } from '../pages/home/home';
 import { TabsPage } from '../pages/tabs/tabs';
 import {First} from "../pages/first/first"
@@ -22,7 +21,7 @@ import {Emotional} from "../pages/emotional/emotional";
 import {Physicalresources} from "../pages/physicalresources/physicalresources";
 import {Map} from "../pages/map/map";
 import {HttpModule} from "@angular/http";
-import {DetailPage} from "../pages/detail-page/detail-page";
+
 import {UserData} from "../providers/user-data";
 import {IonicStorageModule} from "@ionic/storage";
 import {Filter} from "../pages/filter/filter";
@@ -51,6 +50,9 @@ import {Occupationalgoals} from "../pages/occupationalgoals/occupationalgoals";
 import {Spiritualgoals} from "../pages/spiritualgoals/spiritualgoals";
 import {Physicalgoals} from "../pages/physicalgoals/physicalgoals";
 import {Emotionalgoals} from "../pages/emotionalgoals/emotionalgoals";
+import {AboutPage} from "../pages/todo/about";
+import {ContactPage} from "../pages/events/contact";
+import {DetailPage} from "../pages/login/detail-page";
 
 @NgModule({
   declarations: [

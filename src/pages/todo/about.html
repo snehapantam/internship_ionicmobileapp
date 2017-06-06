@@ -42,7 +42,7 @@
 
       <ion-item-options side="left">
 
-        <button ion-button color="danger">
+        <button ion-button color="danger" (click)="deletetodo()">
           <ion-icon name="trash"></ion-icon>
           Delete
         </button>
@@ -50,7 +50,7 @@
 
       <ion-item-options side="right">
 
-        <button ion-button color="secondary">
+        <button ion-button color="secondary" (click)="taskcompleted()">
           <ion-icon name="checkbox"></ion-icon>
           Task Completed
         </button>

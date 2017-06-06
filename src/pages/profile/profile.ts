@@ -1,7 +1,8 @@
 import { Component } from '@angular/core';
 import {AlertController, IonicPage, ModalController, NavController, NavParams} from 'ionic-angular';
 import {TabsPage} from "../tabs/tabs";
-import {DetailPage} from "../detail-page/detail-page";
+import {DetailPage} from "../login/detail-page";
+
 
 /**
  * Generated class for the Profile page.
