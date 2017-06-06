@@ -41,7 +41,7 @@ export class Assessmentresources {
     this.physical=this.segment;
     this.segment = this.navParams.get('name');
 
-    this.physical = this.segment;
+    this.assessment = this.segment;
 
 
     this.phoneNumber = 9094874493;

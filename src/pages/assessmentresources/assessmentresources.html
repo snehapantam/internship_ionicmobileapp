@@ -7,7 +7,7 @@
 <ion-header >
   <ion-navbar no-border-bottom>
     <ion-title>
-      Physical
+      Assessment
     </ion-title>
     <ion-buttons end>
       <button ion-button icon-only >
@@ -19,7 +19,7 @@
 
 
   <ion-toolbar no-border-top>
-    <ion-segment [(ngModel)]="physical" color="dark" >
+    <ion-segment [(ngModel)]="assessment" color="dark" >
       <ion-segment-button value="resources" >
 
         Resources
@@ -41,15 +41,15 @@
 
 
 
-  <div [ngSwitch]="physical" >
+  <div [ngSwitch]="assessment" >
 
     <ion-card *ngSwitchCase="'resources'" style="background: rgba(0,0,0,0.75);">
 
       <ion-card-content  >
-        <ion-card-title style="color: white" >
+        <ion-card-title  >
           <b>Resource 1</b>
         </ion-card-title>
-        <p style="color: white">
+        <p >
           Location 1
         </p>
       </ion-card-content>
@@ -80,13 +80,13 @@
   </div>
 
 
-  <div [ngSwitch]="physical">
+  <div [ngSwitch]="assessment">
     <div *ngSwitchCase="'workshops'">
       <ion-card  >
 
         <ion-card-content >
           <ion-card-title>
-            Resource
+           Resource
           </ion-card-title>
           <p>
             Location 1
@@ -94,20 +94,20 @@
         </ion-card-content>
         <ion-row>
           <ion-col>
-            <button ion-button icon-left clear small>
+            <button ion-button icon-left clear small style="color: white">
               <ion-icon name="thumbs-up"></ion-icon>
               <div>Call</div>
             </button>
           </ion-col>
           <ion-col>
-            <button ion-button icon-left clear small>
+            <button ion-button icon-left clear small style="color: white">
               <ion-icon name="text"></ion-icon>
               <div>Email</div>
             </button>
           </ion-col>
           <ion-col center text-center>
 
-            <button ion-button icon-left clear small (click)="presentToast()">
+            <button ion-button icon-left clear small (click)="presentToast()" style="color: white">
               <ion-icon name="clock"></ion-icon>
               <div>To do</div>
             </button>
@@ -118,7 +118,7 @@
 
     </div>
 
-    <div [ngSwitch]="physical">
+    <div [ngSwitch]="assessment">
 
       <ion-card *ngSwitchCase="'tutorials'">
 
@@ -132,20 +132,20 @@
         </ion-card-content>
         <ion-row>
           <ion-col>
-            <button ion-button icon-left clear small>
+            <button ion-button icon-left clear small style="color: white">
               <ion-icon name="thumbs-up"></ion-icon>
               <div>Call</div>
             </button>
           </ion-col>
           <ion-col>
-            <button ion-button icon-left clear small>
+            <button ion-button icon-left clear small style="color: white">
               <ion-icon name="text"></ion-icon>
               <div>Email</div>
             </button>
           </ion-col>
           <ion-col center text-center>
 
-            <button ion-button icon-left clear small (click)="presentToast()">
+            <button ion-button icon-left clear small (click)="presentToast()" style="color: white">
               <ion-icon name="clock"></ion-icon>
               <div>To do</div>
             </button>
@@ -156,7 +156,7 @@
     </div>
   </div>
 
-  <div [ngSwitch]="physical"  >
+  <div [ngSwitch]="assessment"  >
 
     <div *ngSwitchCase="'clubs'">
 
@@ -172,20 +172,20 @@
           </ion-card-content>
           <ion-row>
             <ion-col>
-              <button ion-button icon-left clear small (click)="call(club.phone)">
+              <button ion-button icon-left clear small (click)="call(club.phone)" style="color: white">
                 <ion-icon name="thumbs-up"></ion-icon>
                 <div>Call</div>
               </button>
             </ion-col>
             <ion-col>
-              <button ion-button icon-left clear small>
+              <button ion-button icon-left clear small style="color: white">
                 <ion-icon name="text"></ion-icon>
                 <div>Email</div>
               </button>
             </ion-col>
             <ion-col center text-center>
 
-              <button ion-button icon-left clear small (click)="presentToast()">
+              <button ion-button icon-left clear small (click)="presentToast()" style="color: white">
                 <ion-icon name="clock"></ion-icon>
                 <div>To do</div>
               </button>
@@ -211,6 +211,22 @@
     background: url("../../assets/img/CSS.jpeg");
 
   }
+
+  ion-card{
+    background: rgba(0,0,0,0.75);
+    color: white;
+  }
+
+  ion-card-title{
+    color: white;
+font-weight: bold  }
+  p{
+    color: white;
+  }
+
+
+
+
 
 
 </style>

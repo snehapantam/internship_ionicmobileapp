@@ -18,16 +18,16 @@
 
     <ion-item>
       <ion-label floating>Name</ion-label>
-      <ion-input type="text"></ion-input>
+      <ion-input type="text" [(ngModel)]="name"></ion-input>
     </ion-item>
 
     <ion-item>
-      <ion-label floating>College</ion-label>
-      <ion-select [(ngModel)]="college">
-        <ion-option value="csusb" selected="true">California State univeristy San bernardino</ion-option>
-        <ion-option value="csulb">California State university Long Beach</ion-option>
-
-      </ion-select>
+      <ion-label floating>Email id</ion-label>
+      <ion-input type="email" [(ngModel)]="email"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label floating >Password</ion-label>
+      <ion-input type="password" [(ngModel)]="password"></ion-input>
     </ion-item>
 
     <ion-item>
@@ -44,20 +44,18 @@
       <ion-option value="csulb">Business</ion-option>
 
     </ion-select>
-  </ion-item><ion-item>
-    <ion-label floating>Career Goals</ion-label>
-    <ion-select [(ngModel)]="goal">
-      <ion-option value="csusb" selected="true">Teacher</ion-option>
-      <ion-option value="csulb">Doctor</ion-option>
-
-    </ion-select>
   </ion-item>
 
-  </ion-list>
 
-  <button ion-button (click)="openTabs()">
+  </ion-list>
+  <p>{{major}}</p>
+
+  <button ion-button (click)="presentModal()">
     Done
 
   </button>
+
+  <button ion-button outline (click)="presentModal()">Already Registered</button>
+
 
 </ion-content>

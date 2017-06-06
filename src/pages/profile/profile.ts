@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
-import {AlertController, IonicPage, NavController, NavParams} from 'ionic-angular';
+import {AlertController, IonicPage, ModalController, NavController, NavParams} from 'ionic-angular';
 import {TabsPage} from "../tabs/tabs";
+import {DetailPage} from "../detail-page/detail-page";
 
 /**
  * Generated class for the Profile page.
@@ -18,50 +19,18 @@ export class Profile {
   testRadioResult;
 
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, public alertCtrl:AlertController) {}
+  constructor(public navCtrl: NavController, public navParams: NavParams, public alertCtrl:AlertController,
+  public modalCtrl:ModalController) {}
 
-  showRadio() {
-    let alert = this.alertCtrl.create();
-    alert.setTitle('Lightsaber color');
 
-    alert.addInput({
-      type: 'radio',
-      label: 'Blue',
-      value: 'blue',
-
-      checked: true
-    });
-    alert.addInput({
-      type: 'radio',
-      label: 'Green',
-      value: 'green'
-    });
-
-    alert.addInput({
-      type: 'radio',
-      label: 'Red',
-      value: 'red'
-    });
-
-    alert.addInput({
-      type: 'radio',
-      label: 'Yellow',
-      value: 'yellow'
-    });
-
-    alert.addButton('Cancel');
-    alert.addButton({
-      text: 'OK',
-      handler: data => {
-        this.testRadioOpen = false;
-        this.testRadioResult = data;
-      }
-    });
-    alert.present();
-  }
 
   openTabs(){
     this.navCtrl.push(TabsPage);
+  }
+
+  presentModal() {
+    let modal = this.modalCtrl.create(DetailPage);
+    modal.present();
   }
 }
 
