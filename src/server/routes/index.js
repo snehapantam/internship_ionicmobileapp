@@ -63,10 +63,10 @@ router.get('/getOccupationalTutorials', occupationalQueries.getOccupationalTutor
 
 /***************** SOCIAL **************************/
 router.get('/getSocialClubs', socialQueries.getSocialClubs);
-//router.get('/getSocialResources', socialQueries.getSocialResources);
-//router.get('/getSocialGoals', socialQueries.getSocialGoals);
-//router.get('/getSocialWorkshops', socialQueries.getSocialWorkshops);
-//router.get('/getSocialTutorials', socialQueries.getSocialTutorials);
+router.get('/getSocialResources', socialQueries.getSocialResources);
+router.get('/getSocialGoals', socialQueries.getSocialGoals);
+router.get('/getSocialWorkshops', socialQueries.getSocialWorkshops);
+router.get('/getSocialTutorials', socialQueries.getSocialTutorials);
 
 /***************** SPIRITUAL **************************/
 router.get('/getSpiritualClubs', spiritualQueries.getSpiritualClubs);
