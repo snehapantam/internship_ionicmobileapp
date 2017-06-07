@@ -47,7 +47,8 @@
     const results = [];
     var search=req._parsedUrl.query;
     search = search.substring(0, search.length - 1);
-    queryStr = 'SELECT * from goal g ,dimension d WHERE g.dimension_id = d.id and d.name="Physical" and g.user_id='+search+';'
+    console.log("search value",search)
+    queryStr = "SELECT * from goal g ,dimension d WHERE g.dimension_id = d.id and d.name='Physical' and g.user_id="+search+";"
     console.log(queryStr)
     pg.connect(connectionString, function(err, client, done){
       if(err) {

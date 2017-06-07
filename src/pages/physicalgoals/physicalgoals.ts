@@ -32,7 +32,9 @@ export class Physicalgoals {
       .map(res => res.json())
       .subscribe(data => {
         this.goals = data;
+        console.log("goals from http",this.goals)
         this.goals = goalsProvider.getProgress(this.goals);
+        console.log("modified",this.goals)
       });
   }
 
