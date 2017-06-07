@@ -55,7 +55,7 @@ export class Physicalresources {
     this.physical = this.segment;
 
 
-    this.phoneNumber = 9094874493;
+
     /**put the phone number here.*/
 
 
@@ -71,7 +71,9 @@ presentToast(){
     });
     toast.present();
 }
-  call() {
+  call(phone) {
+  console.log('phone');
+    this.phoneNumber = phone;
     this.callNumber.callNumber(String(this.phoneNumber), true)
       .then(() => console.log('Launched dialer!'))
       .catch(() => console.log('Error launching dialer'));

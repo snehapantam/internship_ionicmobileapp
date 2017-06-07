@@ -49,7 +49,7 @@ Resources
           </ion-card-content>
           <ion-row>
             <ion-col>
-              <button ion-button icon-left clear small style="color: white">
+              <button ion-button icon-left clear small style="color: white" (click)="call(resource.phone)">
                 <ion-icon name="thumbs-up"></ion-icon>
                 <div>Call</div>
               </button>
@@ -92,7 +92,7 @@ Resources
       </ion-card-content>
       <ion-row>
         <ion-col>
-          <button ion-button icon-left clear small>
+          <button ion-button icon-left clear small (click)="call(workshop.phone)">
             <ion-icon name="thumbs-up"></ion-icon>
             <div>Call</div>
           </button>
@@ -105,7 +105,7 @@ Resources
         </ion-col>
         <ion-col center text-center>
 
-          <button ion-button icon-left clear small (click)="presentToast()"> <!-- Add todo table on button click-->
+          <button ion-button icon-left clear small (click)="presentToast()" > <!-- Add todo table on button click-->
             <ion-icon name="clock"></ion-icon>
             <div>To do</div>
           </button>

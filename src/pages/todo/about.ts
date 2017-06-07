@@ -48,7 +48,7 @@ result:string[]=[];
   }
 
   deletetodo(){
-    
+
   }
 
   ionViewDidLoad() {

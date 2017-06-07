@@ -27,7 +27,7 @@
   <button ion-button  (click)="login(loginData)"  >Login</button>
 
 
-  <button ion-button outline (click)="presentModal()" >Not a User? Signup!</button>
+  <button ion-button outline [navPush]="firstpage" >Not a User? Signup!</button>
 </ion-list>
 
 

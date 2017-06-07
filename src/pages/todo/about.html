@@ -3,11 +3,7 @@
     <ion-title>
      To Do
     </ion-title>
-    <ion-buttons end>
-      <button ion-button icon-only (click)="presentFilter()">
-        <ion-icon ios="ios-options-outline" md="md-options"></ion-icon>
-      </button>
-    </ion-buttons>
+
   </ion-navbar>
 
 
@@ -30,12 +26,70 @@
 <ion-content>
   <div [ngSwitch]="todopage">
   <ion-list *ngSwitchCase="'todo'" >
+    <ion-list-header>
+      Physical
+    </ion-list-header>
+
+
+    <ion-item-sliding  >
+      <ion-item>
+
+      <h2>Sneha</h2>
+      <p>Location</p>
+
+    </ion-item>
+      <ion-item>
+
+        <h2>Panda</h2>
+        <p>Location</p>
+
+      </ion-item>
+      <ion-item>
+
+        <h2>Sayali</h2>
+        <p>Location</p>
+
+      </ion-item>
+
+      <ion-item-options side="left">
+
+        <button ion-button color="danger" (click)="deletetodo()">
+          <ion-icon name="trash"></ion-icon>
+          Delete
+        </button>
+      </ion-item-options>
+
+      <ion-item-options side="right">
+
+        <button ion-button color="secondary" (click)="taskcompleted()">
+          <ion-icon name="checkbox"></ion-icon>
+          Task Completed
+        </button>
+      </ion-item-options>
+
+    </ion-item-sliding>
+
+    <ion-list-header>
+      Emotional
+    </ion-list-header>
 
 
     <ion-item-sliding  >
       <ion-item>
 
         <h2>Sneha</h2>
+        <p>Location</p>
+
+      </ion-item>
+      <ion-item>
+
+        <h2>Panda</h2>
+        <p>Location</p>
+
+      </ion-item>
+      <ion-item>
+
+        <h2>Sayali</h2>
         <p>Location</p>
 
       </ion-item>
@@ -65,13 +119,14 @@
       <style>
 
   ion-content{
-    background: url("../../assets/img/Task Manager.jpg");
-
-
-
-
+    background: url("../../assets/img/physicalimage.jpg");
 
   }
+        ion-list-header{
+          background-color: rgba(0,0,0,0.75);
+          color: white;
+        }
+
 
   </style>
 
