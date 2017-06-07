@@ -15,6 +15,7 @@ export class GoalsProgressService {
   getProgress(goals){
     console.log(goals)
     for(var i=0;i<goals.length;i++){
+      console.log(goals[i]);
       if(goals[i].progress != 100){
         goals[i].final_score = 0.0;
       }

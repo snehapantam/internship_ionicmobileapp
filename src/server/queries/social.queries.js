@@ -1,4 +1,18 @@
-
+/**
+ * Created by sreen on 5/31/2017.
+ */
+/**
+ * Created by sreen on 5/31/2017.
+ */
+/**
+ * Created by sreen on 5/31/2017.
+ */
+/**
+ * Created by sreen on 5/31/2017.
+ */
+/**
+ * Created by sreen on 5/31/2017.
+ */
 (function () {
   const express = require('express');
   const router = express.Router();
@@ -9,7 +23,7 @@
   function getSocialClubs(req, res, next){
     const results = [];
     console.log("inside queries")
-    var queryStr = "SELECT * from clubs WHERE dimension_id = 38";
+    var queryStr = "SELECT * from clubs WHERE dimension_id = 38;"
     pg.connect(connectionString, function(err, client, done){
       if(err) {
         done();

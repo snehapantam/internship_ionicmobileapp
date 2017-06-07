@@ -25,7 +25,7 @@ export class Physicalresources {
   clubs: any;
   resources:any;
   phoneNumber:number;
-  private headers = new Headers({'Content-Type': 'application/json'});
+
   mapPage = Map;
   data:any;
 
@@ -55,16 +55,13 @@ export class Physicalresources {
     this.physical = this.segment;
 
 
-
-    /**put the phone number here.*/
-
-
-
-
   }
 
+addTODO(club){
 
-presentToast(){
+}
+presentToast(clubs){
+    //console.log(clubs)
     let toast=this.toastCtrl.create({
       message:'Added in To do list',
       duration:3000
