@@ -34,7 +34,8 @@
         console.log(err);
         return res.status(500).json({success: false, data: err});
       }
-      const query = client.query('SELECT d.name, c.name, c.phone, c.web, c.email, c.contacts, c.location from campus_resource c ,dimension d WHERE c.dimension_id = d.id and d.name="Emotional";');
+      var a="SELECT d.name, c.name, c.phone, c.web, c.email, c.contacts, c.location from campus_resource c ,dimension d WHERE c.dimension_id = d.id and d.name='Emotional';"
+      const query = client.query(a);
       query.on('row', function(row){
         results.push(row);
       });
@@ -50,7 +51,7 @@
     var search=req._parsedUrl.query;
     search = search.substring(0, search.length - 1);
     console.log("search value",search)
-    queryStr = "SELECT * from goal g ,dimension d WHERE g.dimension_id = d.id and d.name='Emotional' and g.user_id="+search+";"
+    var queryStr = "SELECT * from goal g ,dimension d WHERE g.dimension_id = d.id and d.name='Emotional' and g.user_id="+search+";"
     console.log(queryStr)
     pg.connect(connectionString, function(err, client, done){
       if(err) {
@@ -77,7 +78,8 @@
         console.log(err);
         return res.status(500).json({success: false, data: err});
       }
-      const query = client.query('SELECT d.name, c.name, c.location, c.date, c.start time, c.stop time, c.url from workshops c ,dimension d WHERE c.dimension_id = d.id and d.name="Emotional";');
+      var c="SELECT d.name, c.name, c.location, c.date, c.start time, c.stop time, c.url from workshops c ,dimension d WHERE c.dimension_id = d.id and d.name='Emotional';"
+      const query = client.query(c);
       query.on('row', function(row){
         results.push(row);
       });
@@ -96,7 +98,8 @@
         console.log(err);
         return res.status(500).json({success: false, data: err});
       }
-      const query = client.query('SELECT d.name, c.url from tutorials c ,dimension d WHERE c.dimension_id = d.id and d.name="Emotional";');
+      var d="SELECT d.name, c.url from tutorials c ,dimension d WHERE c.dimension_id = d.id and d.name='Emotional';'"
+      const query = client.query(d);
       query.on('row', function(row){
         results.push(row);
       });

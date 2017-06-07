@@ -40,7 +40,8 @@
         console.log(err);
         return res.status(500).json({success: false, data: err});
       }
-      const query = client.query('SELECT d.name, c.name, c.phone, c.web, c.email, c.contacts, c.location from campus_resource c ,dimension d WHERE c.dimension_id = d.id and d.name="Environmental";');
+      var a="SELECT d.name, c.name, c.phone, c.web, c.email, c.contacts, c.location from campus_resource c ,dimension d WHERE c.dimension_id = d.id and d.name='Environmental';"
+      const query = client.query(a);
       query.on('row', function(row){
         results.push(row);
       });
@@ -83,7 +84,8 @@
         console.log(err);
         return res.status(500).json({success: false, data: err});
       }
-      const query = client.query('SELECT d.name, c.name, c.location, c.date, c.start time, c.stop time, c.url from workshops c ,dimension d WHERE c.dimension_id = d.id and d.name="Environmental";');
+      var b="SELECT d.name, c.name, c.location, c.date, c.start time, c.stop time, c.url from workshops c ,dimension d WHERE c.dimension_id = d.id and d.name='Environmental';"
+      const query = client.query(b);
       query.on('row', function(row){
         results.push(row);
       });
@@ -102,7 +104,8 @@
         console.log(err);
         return res.status(500).json({success: false, data: err});
       }
-      const query = client.query('SELECT d.name, c.url from tutorials c ,dimension d WHERE c.dimension_id = d.id and d.name="Environmental";');
+      var c="SELECT d.name, c.url from tutorials c ,dimension d WHERE c.dimension_id = d.id and d.name='Environmental';"
+      const query = client.query(c);
       query.on('row', function(row){
         results.push(row);
       });
