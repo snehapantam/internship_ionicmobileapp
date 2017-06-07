@@ -25,7 +25,7 @@ export class Occupationalresources {
 
               public callNumber:CallNumber, public toastCtrl:ToastController) {
 
-    this.httpService.get('/getPhysicalClubs')
+    this.httpService.get('/getOccupationalClubs')
       .map(res => res.json())
       .subscribe(data => {
         this.clubs = data;

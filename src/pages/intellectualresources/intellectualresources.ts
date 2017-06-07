@@ -26,7 +26,7 @@ export class Intellectualresources {
 
               public callNumber:CallNumber, public toastCtrl:ToastController) {
 
-    this.httpService.get('/getPhysicalClubs')
+    this.httpService.get('/getIntellectualClubs')
       .map(res => res.json())
       .subscribe(data => {
         this.clubs = data;

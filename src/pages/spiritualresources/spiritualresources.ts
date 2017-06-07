@@ -26,7 +26,7 @@ export class Spiritualresources {
 
               public callNumber:CallNumber, public toastCtrl:ToastController) {
 
-    this.httpService.get('/getPhysicalClubs')
+    this.httpService.get('/getSpiritualClubs')
       .map(res => res.json())
       .subscribe(data => {
         this.clubs = data;

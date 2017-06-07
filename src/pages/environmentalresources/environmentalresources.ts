@@ -18,22 +18,27 @@ export class Environmentalresources {
 
   [name: string]: any;
   clubs: any;
+  resources: any;
   phoneNumber:number;
 
   mapPage = Map;
-
-
-
 
   constructor(public navCtrl: NavController, public navParams: NavParams, private httpService: Http,
               public alertCtrl: AlertController,
 
               public callNumber:CallNumber, public toastCtrl:ToastController) {
 
-    this.httpService.get('/getPhysicalClubs')
+    this.httpService.get('/getEnvironmentalClubs')
       .map(res => res.json())
       .subscribe(data => {
         this.clubs = data;
+        console.log("data" , data);
+      });
+
+    this.httpService.get('/getEnvironmentalResources')
+      .map(res => res.json())
+      .subscribe(data => {
+        this.resources = data;
         console.log("data" , data);
       });
 
@@ -54,6 +59,7 @@ export class Environmentalresources {
 
 
   presentToast(){
+
     let toast=this.toastCtrl.create({
       message:'Added in To do list',
       duration:3000

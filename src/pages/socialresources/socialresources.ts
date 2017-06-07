@@ -26,7 +26,7 @@ export class Socialresources {
               public alertCtrl: AlertController,
               public callNumber: CallNumber, public toastCtrl: ToastController) {
 
-    this.httpService.get('/getPhysicalClubs')
+    this.httpService.get('/getSocialClubs')
       .map(res => res.json())
       .subscribe(data => {
         this.clubs = data;

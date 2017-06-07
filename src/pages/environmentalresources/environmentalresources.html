@@ -42,40 +42,42 @@
 
 
   <div [ngSwitch]="physical" >
+<div *ngSwitchCase="'resources'">
+  <ion-card  *ngFor = "let resource of resources" style="background: rgba(0,0,0,0.75);">
 
-    <ion-card *ngSwitchCase="'resources'" style="background: rgba(0,0,0,0.75);">
+    <ion-card-content  >
+      <ion-card-title style="color: white" >
+        <b>{{resource.name}} </b>
+      </ion-card-title>
+      <p style="color: white">
+        {{resource.location}}
+      </p>
+    </ion-card-content>
+    <ion-row>
+      <ion-col>
+        <button ion-button icon-left clear small style="color: white">
+          <ion-icon name="thumbs-up"></ion-icon>
+          <div>Call</div>
+        </button>
+      </ion-col>
+      <ion-col>
+        <button ion-button icon-left clear small style="color: white">
+          <ion-icon name="text"></ion-icon>
+          <div>Email</div>
+        </button>
+      </ion-col>
+      <ion-col center text-center>
 
-      <ion-card-content  >
-        <ion-card-title style="color: white" >
-          <b>Resource 1</b>
-        </ion-card-title>
-        <p style="color: white">
-          Location 1
-        </p>
-      </ion-card-content>
-      <ion-row>
-        <ion-col>
-          <button ion-button icon-left clear small style="color: white">
-            <ion-icon name="thumbs-up"></ion-icon>
-            <div>Call</div>
-          </button>
-        </ion-col>
-        <ion-col>
-          <button ion-button icon-left clear small style="color: white">
-            <ion-icon name="text"></ion-icon>
-            <div>Email</div>
-          </button>
-        </ion-col>
-        <ion-col center text-center>
+        <button ion-button icon-left clear small style="color: white" (click)="presentToast()">
+          <ion-icon name="clock"></ion-icon>
+          <div>To do</div>
+        </button>
 
-          <button ion-button icon-left clear small style="color: white" (click)="presentToast()">
-            <ion-icon name="clock"></ion-icon>
-            <div>To do</div>
-          </button>
+      </ion-col>
+    </ion-row>
+  </ion-card>
+</div>
 
-        </ion-col>
-      </ion-row>
-    </ion-card>
 
   </div>
 

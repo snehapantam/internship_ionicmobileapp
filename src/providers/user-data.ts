@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
-import { Http } from '@angular/http';
+import { RequestOptions, Headers,Http } from '@angular/http';
 import 'rxjs/add/operator/map';
+import 'rxjs/add/operator/toPromise';
 
 /*
   Generated class for the UserData provider.
@@ -10,29 +11,37 @@ import 'rxjs/add/operator/map';
 */
 @Injectable()
 export class UserData {
-  data: any;
-  _favorites: string[] = [];
-  http: Http;
-  apiUrl = 'http://myonlai.com:8080/cssp/dimContent?dimName=Physical';
+  public myHeaders = new Headers({'Content-Type': 'application/json'});
+  public myParams = new URLSearchParams();
 
-  constructor(public httpService: Http,) {
-    console.log('Hello UserData Provider');
+  //data: any;
+  //_favorites: string[] = [];
+  //http: Http;
+  //apiUrl = 'http://myonlai.com:8080/cssp/dimContent?dimName=Physical';
 
-    this.load();
+  constructor(public httpService: Http, public headers: Headers) {
+    //console.log('Hello UserData Provider');
+
+    //this.load();
 
   }
 
-
-  load() {
+  getUser(user){
+    this.myParams.append('id', user.email);
+    var options = new RequestOptions({ headers: this.myHeaders, params: this.myParams });
+    return this.httpService.get('/addUser', options)
+      .map(res => res.json());
+  }
+  /*load() {
     this.http = this.httpService;
 
 
     var response = this.http.get(this.apiUrl).map(res => res.json());
     return response;
-  }
+  }*/
 
 
-  hasFavorite(sessionName: string): boolean {
+  /*hasFavorite(sessionName: string): boolean {
     return (this._favorites.indexOf(sessionName) > -1);
   };
 
@@ -47,7 +56,7 @@ export class UserData {
       this._favorites.splice(index, 1);
       console.log(this._favorites)
     }
-  };
+  };*/
 
 
 

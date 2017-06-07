@@ -18,30 +18,30 @@
 
     <ion-item>
       <ion-label floating>Name</ion-label>
-      <ion-input type="text" [(ngModel)]="name"></ion-input>
+      <ion-input type="text" [(ngModel)]="user.name"></ion-input>
     </ion-item>
 
     <ion-item>
       <ion-label floating>Email id</ion-label>
-      <ion-input type="email" [(ngModel)]="email"></ion-input>
+      <ion-input type="email" [(ngModel)]="user.email"></ion-input>
     </ion-item>
     <ion-item>
       <ion-label floating >Password</ion-label>
-      <ion-input type="password" [(ngModel)]="password"></ion-input>
+      <ion-input type="password" [(ngModel)]="user.password"></ion-input>
     </ion-item>
 
     <ion-item>
       <ion-label floating>Major</ion-label>
-      <ion-select [(ngModel)]="major">
-        <ion-option value="csusb" selected="true">Computer Science</ion-option>
-        <ion-option value="csulb">Business</ion-option>
+      <ion-select [(ngModel)]="user.major">
+        <ion-option value="Computer Science" selected="true">Computer Science</ion-option>
+        <ion-option value="Business">Business</ion-option>
 
       </ion-select>
     </ion-item><ion-item>
     <ion-label floating>Minor</ion-label>
-    <ion-select [(ngModel)]="minor">
-      <ion-option value="csusb" selected="true">Computer science</ion-option>
-      <ion-option value="csulb">Business</ion-option>
+    <ion-select [(ngModel)]="user.minor">
+      <ion-option value="Computer science" selected="true">Computer science</ion-option>
+      <ion-option value="Business">Business</ion-option>
 
     </ion-select>
   </ion-item>
@@ -50,7 +50,7 @@
   </ion-list>
 
 
-  <button ion-button (click)="presentModal()">
+  <button ion-button (click)="signup(user)">
     Done
 
   </button>

@@ -30,7 +30,8 @@ export class Assessmentresources {
 
               public callNumber:CallNumber, public toastCtrl:ToastController) {
 
-    this.httpService.get('/getPhysicalClubs')
+
+    this.httpService.get('/getAssessmentClubs')
       .map(res => res.json())
       .subscribe(data => {
         this.clubs = data;

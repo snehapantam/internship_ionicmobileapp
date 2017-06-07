@@ -9,9 +9,6 @@ import { TabsPage } from '../pages/tabs/tabs';
 import {First} from "../pages/first/first"
 import {Geolocation} from '@ionic-native/geolocation'
 
-
-
-
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import {Profile} from "../pages/profile/profile";
@@ -53,6 +50,7 @@ import {Emotionalgoals} from "../pages/emotionalgoals/emotionalgoals";
 import {AboutPage} from "../pages/todo/about";
 import {ContactPage} from "../pages/events/contact";
 import {DetailPage} from "../pages/login/detail-page";
+import {GoalsProgressService} from "../providers/goals_progress-provider";
 
 @NgModule({
   declarations: [
@@ -105,7 +103,7 @@ import {DetailPage} from "../pages/login/detail-page";
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     UserData,
     CallNumber,
-
+    GoalsProgressService
   ]
 })
 export class AppModule {}
