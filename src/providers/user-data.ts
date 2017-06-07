@@ -14,14 +14,16 @@ export class UserData {
   public myHeaders = new Headers({'Content-Type': 'application/json'});
   public myParams = new URLSearchParams();
 
+
+
   //data: any;
-  //_favorites: string[] = [];
+
   //http: Http;
   //apiUrl = 'http://myonlai.com:8080/cssp/dimContent?dimName=Physical';
 
   constructor(public httpService: Http, public headers: Headers) {
     //console.log('Hello UserData Provider');
-
+console.log('favorites')
     //this.load();
 
   }

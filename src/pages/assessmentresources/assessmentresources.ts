@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import {AlertController, IonicPage, NavController, NavParams, ToastController} from 'ionic-angular';
-import {CallNumber} from "@ionic-native/call-number";
+import {CallNumber} from '@ionic-native/call-number'
 import {Http} from "@angular/http";
 
 /**

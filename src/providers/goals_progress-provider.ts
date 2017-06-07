@@ -7,8 +7,9 @@ export class GoalsProgressService {
   httpService: any;
   data: any;
   http:Http;
-
+  favorites: string[] = [];
   constructor() {
+
   }
 
   getProgress(goals){

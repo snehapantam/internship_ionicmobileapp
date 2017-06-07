@@ -3,6 +3,7 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import {Headers,Http, RequestOptions} from "@angular/http";
 import 'rxjs/add/operator/map';
 import {GoalsProgressService} from "../../providers/goals_progress-provider";
+import {Storage} from "@ionic/storage"
 
 /**
  * Generated class for the Physicalgoals page.
@@ -19,7 +20,12 @@ export class Physicalgoals {
 
   goals:any;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams,private httpService: Http, public goalsProvider: GoalsProgressService) {
+  constructor(public navCtrl: NavController, public navParams: NavParams,private httpService: Http, public goalsProvider: GoalsProgressService,
+  public storage:Storage) {
+
+    this.storage.get('id').then((val) => {
+      console.log('Your name is', val);
+    })
     var userEmail = "4"
 
     let myHeaders = new Headers();
@@ -41,5 +47,7 @@ export class Physicalgoals {
   ionViewDidLoad() {
     console.log('ionViewDidLoad Physicalgoals');
   }
+
+
 
 }

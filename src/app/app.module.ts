@@ -103,7 +103,8 @@ import {GoalsProgressService} from "../providers/goals_progress-provider";
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     UserData,
     CallNumber,
-    GoalsProgressService
+    GoalsProgressService,
+
   ]
 })
 export class AppModule {}

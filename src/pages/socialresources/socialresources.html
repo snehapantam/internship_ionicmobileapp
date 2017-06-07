@@ -7,13 +7,9 @@
 <ion-header >
   <ion-navbar no-border-bottom>
     <ion-title>
-      Physical
+      Social
     </ion-title>
-    <ion-buttons end>
-      <button ion-button icon-only >
-        <ion-icon ios="ios-options-outline" md="md-options"></ion-icon>
-      </button>
-    </ion-buttons>
+
   </ion-navbar>
 
 
@@ -158,9 +154,27 @@
 
   <div [ngSwitch]="physical"  >
 
+
     <div *ngSwitchCase="'clubs'">
 
+      <ion-list color="dark">
+        <ion-item>
+          <ion-label style="color: black"><b>CATEGORIES</b></ion-label>
+          <ion-select [(ngModel)]="gaming">
+            <ion-option value="nes">NES</ion-option>
+            <ion-option value="n64">Nintendo64</ion-option>
+            <ion-option value="ps">PlayStation</ion-option>
+            <ion-option value="genesis">Sega Genesis</ion-option>
+            <ion-option value="saturn">Sega Saturn</ion-option>
+            <ion-option value="snes">SNES</ion-option>
+          </ion-select>
+        </ion-item>
+      </ion-list>
       <div *ngFor = "let club of clubs">
+
+
+
+       <p>{{gaming}}</p>
         <ion-card>
           <ion-card-content>
             <ion-card-title>

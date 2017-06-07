@@ -1,7 +1,12 @@
 import { Component } from '@angular/core';
-import {AlertController, IonicPage, NavController, NavParams, ToastController} from 'ionic-angular';
+import {
+  AlertController, IonicPage, ModalController, NavController, NavParams, PopoverController,
+  ToastController
+} from 'ionic-angular';
 import {CallNumber} from "@ionic-native/call-number";
 import {Http} from "@angular/http";
+import {Intro} from "../intro/intro";
+import * as _ from 'underscore';
 
 /**
  * Generated class for the Socialresources page.
@@ -18,18 +23,26 @@ export class Socialresources {
   [name: string]: any;
   clubs: any;
   phoneNumber: number;
-
+  categories:any;
   mapPage = Map;
 
 
   constructor(public navCtrl: NavController, public navParams: NavParams, private httpService: Http,
               public alertCtrl: AlertController,
-              public callNumber: CallNumber, public toastCtrl: ToastController) {
+              public callNumber: CallNumber, public toastCtrl: ToastController,public popoverCtrl:PopoverController,
+  public modalCtrl:ModalController) {
 
     this.httpService.get('/getSocialClubs')
       .map(res => res.json())
       .subscribe(data => {
         this.clubs = data;
+        for(var i=0;i<this.clubs.length;i++){
+          var index = _.indexOf(this.categories,this.clubs[i].categories);
+          if(!index){
+            this.categories.push(this.clubs[i].categories);
+          }
+        }
+        console.log(this.categories);
         console.log("data", data);
       });
 
@@ -40,8 +53,7 @@ export class Socialresources {
     this.physical = this.segment;
 
 
-    this.phoneNumber = 9094874493;
-    /**put the phone number here.*/
+
 
 
   }
@@ -65,6 +77,12 @@ export class Socialresources {
   ionViewDidLoad() {
     console.log('ionViewDidLoad Socialresources');
   }
+
+  presentModal() {
+    let modal = this.modalCtrl.create(Intro);
+    modal.present();
+  }
+
 
 
 }

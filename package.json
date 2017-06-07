@@ -19,6 +19,7 @@
         "@angular/http": "4.0.0",
         "@angular/platform-browser": "4.0.0",
         "@angular/platform-browser-dynamic": "4.0.0",
+        "@ionic-native/call-number": "^3.12.1",
         "@ionic-native/core": "^3.10.3",
         "@ionic-native/geolocation": "^3.4.4",
         "@ionic-native/launch-navigator": "^3.4.4",
@@ -48,6 +49,7 @@
         "pg": "^6.2.3",
         "rxjs": "5.1.1",
         "sw-toolbox": "3.4.0",
+        "underscore": "^1.8.3",
         "zone.js": "^0.8.4"
     },
     "devDependencies": {

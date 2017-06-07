@@ -4,7 +4,7 @@ import 'rxjs/add/operator/map';
 import {IonicPage, ModalController, NavController, NavParams} from 'ionic-angular';
 import {Profile} from "../profile/profile";
 import {TabsPage} from "../tabs/tabs";
-
+import {Storage} from "@ionic/storage"
 /**
  * Generated class for the DetailPage page.
  *
@@ -23,12 +23,14 @@ export class DetailPage {
   tabsPage=TabsPage
 
 
-  constructor(public navCtrl: NavController, public navParams: NavParams,private httpService: Http, public modalCtrl:ModalController) {
+  constructor(public navCtrl: NavController, public navParams: NavParams,private httpService: Http, public modalCtrl:ModalController, public storage:Storage) {
     this.loginData = {
       email: "",
       password: ""
     }
-    this.data = navParams.data.data;
+
+
+
   }
 
   login(loginData){
@@ -40,9 +42,11 @@ export class DetailPage {
     let options = new RequestOptions({ headers: myHeaders, search: loginData.email });
 
     this.httpService.get('/getUser',options)
-      .map(res => res.json())
+     .map(res => res.json())
       .subscribe(data => {
         this.user = data[0];
+
+        this.storage.set('id',this.user.id);
 
         if(this.user.password == loginData.password){
           this.navCtrl.push(TabsPage);
@@ -54,6 +58,8 @@ export class DetailPage {
     let modal = this.modalCtrl.create(Profile);
     modal.present();
   }
+
+
 
 
   ionViewDidLoad() {
