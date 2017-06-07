@@ -20,6 +20,9 @@ export class Intellectualresources {
   phoneNumber:number;
   segment:any;
  intellectual:any;
+  tutorials:any;
+  workshops:any;
+  resources:any;
 
   constructor(public navCtrl: NavController, public navParams: NavParams, private httpService: Http,
               public alertCtrl: AlertController,
@@ -30,6 +33,24 @@ export class Intellectualresources {
       .map(res => res.json())
       .subscribe(data => {
         this.clubs = data;
+        console.log("data" , data);
+      });
+    this.httpService.get('/getIntellectualResources')
+      .map(res => res.json())
+      .subscribe(data => {
+        this.resources = data;
+        console.log("data" , data);
+      });
+    this.httpService.get('/getIntellectualWorkshops')
+      .map(res => res.json())
+      .subscribe(data => {
+        this.workshops = data;
+        console.log("data" , data);
+      });
+    this.httpService.get('/getIntellectualTutorials')
+      .map(res => res.json())
+      .subscribe(data => {
+        this.tutorials = data;
         console.log("data" , data);
       });
 
@@ -56,7 +77,9 @@ export class Intellectualresources {
     });
     toast.present();
   }
-  call() {
+  call(phone) {
+    console.log('phone');
+    this.phoneNumber = phone;
     this.callNumber.callNumber(String(this.phoneNumber), true)
       .then(() => console.log('Launched dialer!'))
       .catch(() => console.log('Error launching dialer'));

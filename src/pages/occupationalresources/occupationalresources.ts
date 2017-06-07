@@ -19,6 +19,9 @@ export class Occupationalresources {
   phoneNumber:number;
   segment:any;
   occupational:any;
+  resources:any;
+  workshops:any;
+  tutorials:any;
 
   constructor(public navCtrl: NavController, public navParams: NavParams, private httpService: Http,
               public alertCtrl: AlertController,
@@ -29,6 +32,27 @@ export class Occupationalresources {
       .map(res => res.json())
       .subscribe(data => {
         this.clubs = data;
+        console.log("data" , data);
+      });
+
+    this.httpService.get('/getOccupationalResources')
+      .map(res => res.json())
+      .subscribe(data => {
+        this.resources = data;
+        console.log("data" , data);
+      });
+
+    this.httpService.get('/getOccupationalWorkshops')
+      .map(res => res.json())
+      .subscribe(data => {
+        this.workshops = data;
+        console.log("data" , data);
+      });
+
+    this.httpService.get('/getOccupationalTutorials')
+      .map(res => res.json())
+      .subscribe(data => {
+        this.tutorials = data;
         console.log("data" , data);
       });
 

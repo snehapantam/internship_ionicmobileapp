@@ -17,9 +17,13 @@ import {Http} from "@angular/http";
 export class Spiritualresources {
 
   clubs: any;
+  resources:any;
+  workshops:any;
+  tutorials:any;
   phoneNumber:number;
   segment:any;
   spiritual:any;
+
 
   constructor(public navCtrl: NavController, public navParams: NavParams, private httpService: Http,
               public alertCtrl: AlertController,
@@ -30,6 +34,27 @@ export class Spiritualresources {
       .map(res => res.json())
       .subscribe(data => {
         this.clubs = data;
+        console.log("data" , data);
+      });
+
+    this.httpService.get('/getSpiritualResources')
+      .map(res => res.json())
+      .subscribe(data => {
+        this.resources = data;
+        console.log("data" , data);
+      });
+
+    this.httpService.get('/getSpiritualWorkshops')
+      .map(res => res.json())
+      .subscribe(data => {
+        this.workshops = data;
+        console.log("data" , data);
+      });
+
+    this.httpService.get('/getSpiritualTutorials')
+      .map(res => res.json())
+      .subscribe(data => {
+        this.tutorials = data;
         console.log("data" , data);
       });
 
@@ -56,7 +81,9 @@ export class Spiritualresources {
     });
     toast.present();
   }
-  call() {
+  call(phone) {
+    console.log('phone');
+    this.phoneNumber = phone;
     this.callNumber.callNumber(String(this.phoneNumber), true)
       .then(() => console.log('Launched dialer!'))
       .catch(() => console.log('Error launching dialer'));

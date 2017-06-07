@@ -24,6 +24,8 @@ export class Physicalresources {
   [name: string]: any;
   clubs: any;
   resources:any;
+  workshops:any;
+  tutorials:any;
   phoneNumber:number;
 
   mapPage = Map;
@@ -42,10 +44,22 @@ export class Physicalresources {
         this.clubs = data;
       });
 
-    this.httpService.get('/getPhysicalRecources')
+    this.httpService.get('/getPhysicalResources')
       .map(res => res.json())
       .subscribe(data => {
         this.resources = data;
+      });
+
+    this.httpService.get('/getPhysicalWorkshops')
+      .map(res => res.json())
+      .subscribe(data => {
+        this.workshops = data;
+      });
+
+    this.httpService.get('/getPhysicalTutorials')
+      .map(res => res.json())
+      .subscribe(data => {
+        this.tutorials = data;
       });
 
     this.segment= this.navParams.get('name');

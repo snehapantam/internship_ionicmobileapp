@@ -19,6 +19,8 @@ export class Environmentalresources {
   [name: string]: any;
   clubs: any;
   resources: any;
+  tutorials:any;
+  workshops:any;
   phoneNumber:number;
 
   mapPage = Map;
@@ -39,6 +41,20 @@ export class Environmentalresources {
       .map(res => res.json())
       .subscribe(data => {
         this.resources = data;
+        console.log("data" , data);
+      });
+
+    this.httpService.get('/getEnvironmentalWorkshops')
+      .map(res => res.json())
+      .subscribe(data => {
+        this.workshops = data;
+        console.log("data" , data);
+      });
+
+    this.httpService.get('/getEnvironmentalTutorials')
+      .map(res => res.json())
+      .subscribe(data => {
+        this.tutorials = data;
         console.log("data" , data);
       });
 
@@ -66,7 +82,9 @@ export class Environmentalresources {
     });
     toast.present();
   }
-  call() {
+  call(phone) {
+    console.log('phone');
+    this.phoneNumber = phone;
     this.callNumber.callNumber(String(this.phoneNumber), true)
       .then(() => console.log('Launched dialer!'))
       .catch(() => console.log('Error launching dialer'));

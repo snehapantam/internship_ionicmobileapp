@@ -19,6 +19,8 @@ export class Emotionalresources {
   [name: string]: any;
   clubs: any;
   resources: any;
+  workshops:any;
+  tutorials:any;
   phoneNumber:number;
   mapPage = Map;
   selectedSegment: string;
@@ -26,6 +28,7 @@ export class Emotionalresources {
   constructor(public navCtrl: NavController, public navParams: NavParams, private httpService: Http,
               public alertCtrl: AlertController,
               public callNumber:CallNumber) {
+
     this.httpService.get('/getEmotionalClubs')
       .map(res => res.json())
       .subscribe(data => {
@@ -37,6 +40,20 @@ export class Emotionalresources {
       .map(res => res.json())
       .subscribe(data => {
         this.resources = data;
+        console.log("data" , data);
+      });
+
+    this.httpService.get('/getEmotionalWorkshops')
+      .map(res => res.json())
+      .subscribe(data => {
+        this.workshops= data;
+        console.log("data" , data);
+      });
+
+    this.httpService.get('/getEmotionalTutorials')
+      .map(res => res.json())
+      .subscribe(data => {
+        this.tutorials = data;
         console.log("data" , data);
       });
 
@@ -52,7 +69,9 @@ export class Emotionalresources {
   }
 
 
-  call() {
+  call(phone) {
+    console.log('phone');
+    this.phoneNumber = phone;
     this.callNumber.callNumber(String(this.phoneNumber), true)
       .then(() => console.log('Launched dialer!'))
       .catch(() => console.log('Error launching dialer'));
