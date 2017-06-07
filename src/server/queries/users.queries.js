@@ -42,6 +42,7 @@
   function getUser(req, res, next){
     const results = [];
     var search=req._parsedUrl.query;
+    console.log(search,req);
     search = search.substring(0, search.length - 1);
     queryStr = "SELECT * FROM users u WHERE u.email ='"+ search +"';"
     console.log(queryStr)

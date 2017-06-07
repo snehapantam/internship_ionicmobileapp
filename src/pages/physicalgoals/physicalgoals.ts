@@ -17,35 +17,46 @@ import {Storage} from "@ionic/storage"
   templateUrl: 'physicalgoals.html',
 })
 export class Physicalgoals {
+  bla: any;
 
   goals:any;
 
   constructor(public navCtrl: NavController, public navParams: NavParams,private httpService: Http, public goalsProvider: GoalsProgressService,
   public storage:Storage) {
 
+
     this.storage.get('id').then((val) => {
-      console.log('Your name is', val);
+      console.log('Your age is', val);
+      this.bla=val;
+
+      var userEmail = this.bla + "";
+      console.log(userEmail)
+
+      let myHeaders = new Headers();
+      myHeaders.set('Content-Type', 'application/json');
+      myHeaders.set('Accept', 'text/plain');
+      let options = new RequestOptions({ headers: myHeaders, search: userEmail });
+
+
+      this.httpService.get('/getPhysicalGoals',options)
+        .map(res => res.json())
+        .subscribe(data => {
+          this.goals = data;
+          console.log("goals from http",this.goals)
+          this.goals = goalsProvider.getProgress(this.goals);
+          console.log("modified",this.goals)
+        });
+
     })
-    var userEmail = "4"
-
-    let myHeaders = new Headers();
-    myHeaders.set('Content-Type', 'application/json');
-    myHeaders.set('Accept', 'text/plain');
-    let options = new RequestOptions({ headers: myHeaders, search: userEmail });
 
 
-    this.httpService.get('/getPhysicalGoals',options)
-      .map(res => res.json())
-      .subscribe(data => {
-        this.goals = data;
-        console.log("goals from http",this.goals)
-        this.goals = goalsProvider.getProgress(this.goals);
-        console.log("modified",this.goals)
-      });
+
+
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad Physicalgoals');
+    ;
   }
 
 

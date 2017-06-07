@@ -11,13 +11,14 @@
   function getAssessmentClubs(req, res, next){
     const results = [];
     console.log("inside queries")
+    var queryStr ="SELECT d.name, c.name, c.contact_name, c.phone, c.email, c.category from clubs c ,dimension d WHERE c.dimension_id = d.id and d.name='Assessment';";
     pg.connect(connectionString, function(err, client, done){
       if(err) {
         done();
         console.log(err);
         return res.status(500).json({success: false, data: err});
       }
-      const query = client.query('SELECT d.name, c.name, c.contact_name, c.phone, c.email, c.category from clubs c ,dimension d WHERE c.dimension_id = d.id and d.name="Assessment";');
+      const query = client.query(queryStr);
       query.on('row', function(row){
         results.push(row);
       });
@@ -37,7 +38,8 @@
         console.log(err);
         return res.status(500).json({success: false, data: err});
       }
-      const query = client.query('SELECT d.name, c.name, c.phone, c.web, c.email, c.contacts, c.location from campus_resource c ,dimension d WHERE c.dimension_id = d.id and d.name="Assessment";');
+      var qryStg="SELECT d.name, c.name, c.phone, c.web, c.email, c.contacts, c.location from campus_resource c ,dimension d WHERE c.dimension_id = d.id and d.name='Assessment';"
+      const query = client.query(qryStg);
       query.on('row', function(row){
         results.push(row);
       });
@@ -53,7 +55,6 @@
     var search=req._parsedUrl.query;
     search = search.substring(0, search.length - 1);
     console.log("search value",search)
-    queryStr = "SELECT * from goal g ,dimension d WHERE g.dimension_id = d.id and d.name='Assessment' and g.user_id="+search+";"
     console.log(queryStr)
     pg.connect(connectionString, function(err, client, done){
       if(err) {
@@ -61,6 +62,8 @@
         console.log(err);
         return res.status(500).json({success: false, data: err});
       }
+      var queryStr = "SELECT * from goal g ,dimension d WHERE g.dimension_id = d.id and d.name='Assessment' and g.user_id='+search+';"
+
       const query = client.query(queryStr);
       query.on('row', function(row){
         results.push(row);
@@ -80,7 +83,8 @@
         console.log(err);
         return res.status(500).json({success: false, data: err});
       }
-      const query = client.query('SELECT d.name, c.name, c.location, c.date, c.start time, c.stop time, c.url from workshops c ,dimension d WHERE c.dimension_id = d.id and d.name="Assessment";');
+      var s = "SELECT d.name, c.name, c.location, c.date, c.start time, c.stop time, c.url from workshops c ,dimension d WHERE c.dimension_id = d.id and d.name='Assessment';"
+      const query = client.query(s);
       query.on('row', function(row){
         results.push(row);
       });
@@ -99,7 +103,9 @@
         console.log(err);
         return res.status(500).json({success: false, data: err});
       }
-      const query = client.query('SELECT d.name, c.url from tutorials c ,dimension d WHERE c.dimension_id = d.id and d.name="Assessment";');
+
+      var qryStg="SELECT d.name, c.url from tutorials c ,dimension d WHERE c.dimension_id = d.id and d.name='Assessment';"
+      const query = client.query(qryStg);
       query.on('row', function(row){
         results.push(row);
       });

@@ -29,7 +29,9 @@
         console.log(err);
         return res.status(500).json({success: false, data: err});
       }
-      const query = client.query('SELECT d.name, c.name, c.contact_name, c.phone, c.email, c.category from clubs c ,dimension d WHERE c.dimension_id = d.id and d.name="Spiritual";');
+
+      var qryStg="SELECT d.name, c.name, c.contact_name, c.phone, c.email, c.category from clubs c ,dimension d WHERE c.dimension_id = d.id and d.name='Spiritual';"
+      const query = client.query(qryStg);
       query.on('row', function(row){
         results.push(row);
       });

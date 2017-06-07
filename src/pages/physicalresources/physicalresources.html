@@ -62,9 +62,11 @@ Resources
             </ion-col>
             <ion-col center text-center>
 
-          <button ion-button icon-left clear small style="color: white" [navPush]="mapPage">
+          <button ion-button icon-left clear small style="color: white" >
             <ion-icon name="clock"></ion-icon>
-            <div>To do</div>
+                <div>To do</div>
+            <ion-datetime displayFormat="MM/DD/YYYY" [(ngModel)]="myDate" (click)="addTODO(resource)"></ion-datetime>
+
           </button>
 
             </ion-col>
@@ -79,65 +81,43 @@ Resources
 
 
   <div [ngSwitch]="physical">
-    <div *ngSwitchCase="'workshops'">
-      <div *ngFor = "let workshop of workshops">
-        <ion-card  style="...">
-          <ion-card-content >
-            <ion-card-title>
-              Resource
-            </ion-card-title>
-            <p>Location </p>
+<div *ngSwitchCase="'workshops'">
+    <ion-card  >
 
-          </ion-card-content>
-          <ion-row>
-            <ion-col>
+      <ion-card-content >
+        <ion-card-title>
+         Resource
+        </ion-card-title>
+        <p>
+          Location 1
+        </p>
+      </ion-card-content>
+      <ion-row>
+        <ion-col>
+          <button ion-button icon-left clear small (click)="call(workshop.phone)">
+            <ion-icon name="thumbs-up"></ion-icon>
+            <div>Call</div>
+          </button>
+        </ion-col>
+        <ion-col>
+          <button ion-button icon-left clear small>
+            <ion-icon name="text"></ion-icon>
+            <div>Email</div>
+          </button>
+        </ion-col>
+        <ion-col center text-center>
 
-              <button ion-button icon-left clear small (click)="call(workshop.phone)">
+          <button ion-button icon-left clear small  > <!-- Add todo table on button click-->
+            <ion-icon name="clock"></ion-icon>
+                <div>To do</div>
+            <ion-datetime displayFormat="MM/DD/YYYY" [(ngModel)]="myDate" (click)="addTODO(workshop)"></ion-datetime>
+          </button>
 
-                <ion-icon name="thumbs-up"></ion-icon>
+        </ion-col>
+      </ion-row>
+    </ion-card>
 
-                <div>Call</div>
-
-              </button>
-
-            </ion-col>
-
-            <ion-col>
-
-              <button ion-button icon-left clear small>
-
-                <ion-icon name="text"></ion-icon>
-
-                <div>Email</div>
-
-              </button>
-
-            </ion-col>
-
-
-            <ion-col center text-center>
-
-
-                <button ion-button icon-left clear small (click)="presentToast()" > <!-- Add todo table on button click-->
-
-                  <ion-icon name="clock"></ion-icon>
-
-                  <div>To do</div>
-
-                  </button>
-
-
-              </ion-col>
-
-           </ion-row>
-
-          </ion-card>
-
-        </div>
-
-      </div>
-
-    </div>
+  </div>
 
   <div [ngSwitch]="physical">
 
@@ -148,7 +128,7 @@ Resources
         </iframe></div></div>
     </ion-card>
   </div>
-
+  </div>
 
   <div [ngSwitch]="physical"  >
 
@@ -179,9 +159,10 @@ Resources
             </ion-col>
             <ion-col center text-center>
 
-              <button ion-button icon-left clear small (click)="addTODO(club)"  style="color: white">
+              <button ion-button icon-left clear small  style="color: white">
                 <ion-icon name="clock"></ion-icon>
-                <div>To do</div>
+                    <div>To do</div>
+            <ion-datetime displayFormat="MM/DD/YYYY" [(ngModel)]="myDate" (click)="addTODO(club)" ></ion-datetime>
               </button>
 
             </ion-col>

@@ -26,7 +26,9 @@
         console.log(err);
         return res.status(500).json({success: false, data: err});
       }
-      const query = client.query('SELECT d.name, c.name, c.contact_name, c.phone, c.email, c.category from clubs c ,dimension d WHERE c.dimension_id = d.id and d.name="Occupational";');
+
+      var qryStg="SELECT d.name, c.name, c.contact_name, c.phone, c.email, c.category from clubs c ,dimension d WHERE c.dimension_id = d.id and d.name='Occupational';"
+      const query = client.query(qryStg);
       query.on('row', function(row){
         results.push(row);
       });
@@ -61,7 +63,7 @@
     var search=req._parsedUrl.query;
     search = search.substring(0, search.length - 1);
     console.log("search value",search)
-    queryStr = "SELECT * from goal g ,dimension d WHERE g.dimension_id = d.id and d.name='Occupational' and g.user_id="+search+";"
+    var queryStr = "SELECT * from goal g ,dimension d WHERE g.dimension_id = d.id and d.name='Occupational' and g.user_id="+search+";"
     console.log(queryStr)
     pg.connect(connectionString, function(err, client, done){
       if(err) {

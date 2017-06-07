@@ -9,7 +9,9 @@
     <ion-title>
       Social
     </ion-title>
+<ion-buttons end>
 
+</ion-buttons>
   </ion-navbar>
 
 
@@ -39,7 +41,10 @@
 
   <div [ngSwitch]="physical" >
 
+
+
     <ion-card *ngSwitchCase="'resources'" style="background: rgba(0,0,0,0.75);">
+
 
       <ion-card-content  >
         <ion-card-title style="color: white" >
@@ -160,13 +165,9 @@
       <ion-list color="dark">
         <ion-item>
           <ion-label style="color: black"><b>CATEGORIES</b></ion-label>
-          <ion-select [(ngModel)]="gaming">
-            <ion-option value="nes">NES</ion-option>
-            <ion-option value="n64">Nintendo64</ion-option>
-            <ion-option value="ps">PlayStation</ion-option>
-            <ion-option value="genesis">Sega Genesis</ion-option>
-            <ion-option value="saturn">Sega Saturn</ion-option>
-            <ion-option value="snes">SNES</ion-option>
+          <ion-select [(ngModel)]="category">
+            <ion-option value={{category}} *ngFor="let category of categories">{{category}}</ion-option>
+
           </ion-select>
         </ion-item>
       </ion-list>

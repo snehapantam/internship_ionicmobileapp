@@ -34,7 +34,7 @@ export class DetailPage {
   }
 
   login(loginData){
-    console.log(loginData);
+
 
     let myHeaders = new Headers();
     myHeaders.set('Content-Type', 'application/json');
@@ -46,12 +46,16 @@ export class DetailPage {
       .subscribe(data => {
         this.user = data[0];
 
-        this.storage.set('id',this.user.id);
+
 
         if(this.user.password == loginData.password){
           this.navCtrl.push(TabsPage);
+
+          console.log(this.user.id);
+          this.storage.set('id',this.user.id);
         }
       });
+
   }
 
   presentModal() {

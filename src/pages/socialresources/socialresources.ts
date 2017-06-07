@@ -37,6 +37,7 @@ export class Socialresources {
             this.categories.push(this.clubs[i].categories)
           }
         }
+        this.categories = ["abd","dfg","gdrh"]
         console.log("categories", this.categories);
       });
 

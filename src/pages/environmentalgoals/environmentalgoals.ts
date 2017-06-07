@@ -1,6 +1,9 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import {GoalsProgressService} from "../../providers/goals_progress-provider";
+import {Headers,Http, RequestOptions} from "@angular/http";
+import {Storage} from "@ionic/storage"
+
 
 /**
  * Generated class for the Environmentalgoals page.
@@ -14,28 +17,42 @@ import {GoalsProgressService} from "../../providers/goals_progress-provider";
   templateUrl: 'environmentalgoals.html',
 })
 export class Environmentalgoals {
-  goals: any;
-  date: any;
-  final_score:any;
+  bla: any;
+
+  goals:any;
+
+  constructor(public navCtrl: NavController, public navParams: NavParams,private httpService: Http, public goalsProvider: GoalsProgressService,
+              public storage:Storage) {
 
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, public goalsProgress: GoalsProgressService) {
-    goalsProgress.getProgress(this.goals);
-    this.date = new Date();
-    this.goals ={
-        name: "sample goals",
-        type: 0,
-        start_time: "2017-06-01",
-        planned_end_time:"2017-11-01",
-        actual_end_time:"2017-06-05",
-        progress:100,
-        final_score:null
-      }
+    this.storage.get('id').then((val) => {
+      console.log('Your age is', val);
+      this.bla=val;
+
+      var userEmail = this.bla + "";
+      console.log(userEmail)
+
+      let myHeaders = new Headers();
+      myHeaders.set('Content-Type', 'application/json');
+      myHeaders.set('Accept', 'text/plain');
+      let options = new RequestOptions({ headers: myHeaders, search: userEmail });
+
+
+      this.httpService.get('/getPhysicalGoals',options)
+        .map(res => res.json())
+        .subscribe(data => {
+          this.goals = data;
+          console.log("goals from http",this.goals)
+          this.goals = goalsProvider.getProgress(this.goals);
+          console.log("modified",this.goals)
+        });
+
+    })
+
 
 
 
   }
-
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad Environmentalgoals');

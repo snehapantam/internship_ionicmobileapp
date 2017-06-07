@@ -32,7 +32,9 @@
         console.log(err);
         return res.status(500).json({success: false, data: err});
       }
-      const query = client.query('SELECT d.name, c.name, c.phone, c.web, c.email, c.contacts, c.location from campus_resource c ,dimension d WHERE c.dimension_id = d.id and d.name="Physical";');
+
+      var qryStg="SELECT d.name, c.name, c.phone, c.web, c.email, c.contacts, c.location from campus_resource c ,dimension d WHERE c.dimension_id = d.id and d.name='Physical';"
+      const query = client.query(qryStg);
       query.on('row', function(row){
         results.push(row);
       });

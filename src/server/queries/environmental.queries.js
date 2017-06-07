@@ -20,7 +20,8 @@
         console.log(err);
         return res.status(500).json({success: false, data: err});
       }
-      const query = client.query('SELECT d.name, c.name, c.contact_name, c.phone, c.email, c.category from clubs c ,dimension d WHERE c.dimension_id = d.id and d.name="Environmental";');
+      var qryStr="SELECT d.name, c.name, c.contact_name, c.phone, c.email, c.category from clubs c ,dimension d WHERE c.dimension_id = d.id and d.name='Environmental';"
+      const query = client.query(qryStr);
       query.on('row', function(row){
         results.push(row);
       });

@@ -19,7 +19,7 @@ export class AboutPage {
 
 result:string[]=[];
 
-  constructor(public navCtrl: NavController, public platform: Platform,public navparams:NavParams,public service:UserData,
+  constructor(public navCtrl: NavController, public platform: Platform,public navparams:NavParams,
   public modalCtrl:ModalController) {
 
    this.todopage='todo';
@@ -29,18 +29,7 @@ result:string[]=[];
 
   }
 
-  presentFilter() {
-    let modal = this.modalCtrl.create(Filter, this.excludeComponents);
-    modal.present();
 
-    modal.onWillDismiss((data: any[]) => {
-      if (data) {
-        this.excludeComponents = data;
-
-      }
-    });
-
-  }
 
   taskcompleted(){
 

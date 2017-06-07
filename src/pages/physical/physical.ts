@@ -4,6 +4,7 @@ import {Physicalresources} from "../physicalresources/physicalresources";
 import { Http} from '@angular/http';
 import 'rxjs/add/operator/map';
 import {Physicalgoals} from "../physicalgoals/physicalgoals";
+import {Storage} from "@ionic/storage"
 
 /**
  * Generated class for the Physical page.
@@ -22,10 +23,10 @@ export class Physical {
   physicalgoals=Physicalgoals
 
 
-  constructor(public navCtrl: NavController, public navParams: NavParams,public http: Http) {
+  constructor(public navCtrl: NavController, public navParams: NavParams,public http: Http, public storage:Storage) {
 
 
-    }
+  }
 
 
     navigate(segment){

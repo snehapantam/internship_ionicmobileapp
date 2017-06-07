@@ -1,7 +1,7 @@
-import {Component, ViewChild} from '@angular/core';
-import { AlertController, IonicPage, NavController, NavParams, Slides, ToastController,} from 'ionic-angular';
+import {Component, } from '@angular/core';
+import { AlertController, IonicPage, NavController, NavParams, ToastController,} from 'ionic-angular';
 import {Map} from "../map/map";
-import {Headers,Http} from "@angular/http";
+import {Http} from "@angular/http";
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/toPromise';
 import {CallNumber} from "@ionic-native/call-number";
@@ -71,10 +71,13 @@ export class Physicalresources {
 
   }
 
-addTODO(club){
+addTODO(resource){
+
+    console.log('in todo func');
+    console.log(resource);
 
 }
-presentToast(clubs){
+presentToast(){
     //console.log(clubs)
     let toast=this.toastCtrl.create({
       message:'Added in To do list',

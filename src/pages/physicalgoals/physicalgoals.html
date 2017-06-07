@@ -14,29 +14,43 @@
 
 <ion-content>
 
-  <ion-card  >
 
 
- <ion-card-title>Progress Report</ion-card-title>
-    <ion-card-content>
-      <div class="row header">
-        <div class="col">Utility Company Name</div>
-        <div class="col">Service Code</div>
-        <div class="col">Pay Limit</div>
-        <div class="col">Account Number to Use</div>
-        <div class="col"></div>
-      </div>
-      <div class="row" ng-repeat="data in ctrl.data">
-        <div class="col">data.name</div>
-        <div class="col">data.code</div>
-        <div class="col">LK data.limit</div>
-        <div class="col">{{data.account}}</div>
-        <div class="col"><button class="button" ng-click="ctrl.add($index)">Add</button></div>
-      </div>
-    </ion-card-content>
-
-
-  </ion-card>
-
+  <table>
+    <thead>
+    <tr>
+      <th>Name</th>
+      <th>Age</th>
+      <th>Weight (kg)</th>
+      <th>Profession</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+      <td>Carolina Biggleswade</td>
+      <td>23</td>
+      <td>65</td>
+      <td>Jockey</td>
+    </tr>
+    <tr>
+      <td>Harry Sparrowhead</td>
+      <td>34</td>
+      <td>89</td>
+      <td>Trainer</td>
+    </tr>
+    <tr>
+      <td>Marjorie Doors</td>
+      <td>32</td>
+      <td>76</td>
+      <td>Yard Manager</td>
+    </tr>
+    <tr>
+      <td>Earnest Piggington-Smithe</td>
+      <td>18</td>
+      <td>98</td>
+      <td>Groom</td>
+    </tr>
+    </tbody>
+  </table>
 
 </ion-content>
