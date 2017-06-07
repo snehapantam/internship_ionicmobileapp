@@ -18,7 +18,7 @@ export class Socialresources {
   [name: string]: any;
   clubs: any;
   phoneNumber: number;
-
+  categories:any;
   mapPage = Map;
 
 
@@ -26,11 +26,18 @@ export class Socialresources {
               public alertCtrl: AlertController,
               public callNumber: CallNumber, public toastCtrl: ToastController) {
 
+    this.categories = [];
     this.httpService.get('/getSocialClubs')
       .map(res => res.json())
       .subscribe(data => {
         this.clubs = data;
-        console.log("data", data);
+        for(var i=0;i<this.clubs.length;i++){
+          console.log(this.clubs[i].categories,this.categories.indexOf(this.clubs[i].categories))
+          if(this.categories.indexOf(this.clubs[i].categories)== -1){
+            this.categories.push(this.clubs[i].categories)
+          }
+        }
+        console.log("categories", this.categories);
       });
 
     this.segment = this.navParams.get('name');

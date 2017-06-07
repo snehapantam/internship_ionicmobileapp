@@ -54,7 +54,8 @@ export class Assessmentresources {
   }
 
 
-  presentToast(){
+  presentToast(club){
+    console.log(club);
     let toast=this.toastCtrl.create({
       message:'Added in To do list',
       duration:3000

@@ -23,13 +23,14 @@
   function getSocialClubs(req, res, next){
     const results = [];
     console.log("inside queries")
+    var queryStr = "SELECT * from clubs WHERE dimension_id = 38;"
     pg.connect(connectionString, function(err, client, done){
       if(err) {
         done();
         console.log(err);
         return res.status(500).json({success: false, data: err});
       }
-      const query = client.query('SELECT d.name, c.name, c.contact_name, c.phone_no, c.email, c.category from clubs c ,dimension d WHERE c.dimension_id = d.id and d.name="Social";');
+      const query = client.query(queryStr);
       query.on('row', function(row){
         results.push(row);
       });
